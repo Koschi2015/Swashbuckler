@@ -1,0 +1,338 @@
+# depslib dependency file v1.0
+1350463026 source:g:\swashbuckler\quellcode\c++\cb_swashbuckler\main.cpp
+	<SFML/Audio.hpp>
+	<SFML/Graphics.hpp>
+	"CGameEngine.h"
+	"CWindowHandle.h"
+	"CDice.h"
+	"CLogFile.h"
+	<sstream>
+	<iostream>
+
+1349854540 g:\swashbuckler\quellcode\c++\cb_swashbuckler\cgameengine.h
+	"CWindowHandle.h"
+	"CSpriteSheet.h"
+	"CMouse.h"
+	"CRessourcenManager.h"
+	"CUI.h"
+	"CMapIso.h"
+	"CScenegraph.h"
+	"CStateMachine.h"
+	"CManagedFont.h"
+	"CDungeonGenerator.h"
+	"CLogFile.h"
+
+1349855720 source:g:\swashbuckler\quellcode\c++\cb_swashbuckler\cgameengine.cpp
+	"CGameEngine.h"
+
+1349861500 source:g:\swashbuckler\quellcode\c++\cb_swashbuckler\cwindowhandle.cpp
+	"CWindowHandle.h"
+
+1349855134 g:\swashbuckler\quellcode\c++\cb_swashbuckler\cwindowhandle.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	"CLogFile.h"
+
+1350636398 source:g:\swashbuckler\quellcode\c++\cb_swashbuckler\cmouse.cpp
+	"CMouse.h"
+
+1350651060 source:g:\swashbuckler\quellcode\c++\cb_swashbuckler\cspritesheet.cpp
+	"CSpriteSheet.h"
+
+1349855134 g:\swashbuckler\quellcode\c++\cb_swashbuckler\cspritesheet.h
+	<iostream>
+	<SFML/Graphics.hpp>
+	<SFML/System/Clock.hpp>
+	"CRessourcenManager.h"
+	"CLogFile.h"
+
+1349855132 g:\swashbuckler\quellcode\c++\cb_swashbuckler\cmouse.h
+	"CSpriteSheet.h"
+	"CLogFile.h"
+
+1350636398 source:f:\swashbuckler\quellcode\c++\cb_swashbuckler\cmouse.cpp
+	"CMouse.h"
+
+1349855132 f:\swashbuckler\quellcode\c++\cb_swashbuckler\cmouse.h
+	"CSpriteSheet.h"
+	"CLogFile.h"
+
+1349855134 f:\swashbuckler\quellcode\c++\cb_swashbuckler\cspritesheet.h
+	<iostream>
+	<SFML/Graphics.hpp>
+	<SFML/System/Clock.hpp>
+	"CRessourcenManager.h"
+	"CLogFile.h"
+
+1350651060 source:f:\swashbuckler\quellcode\c++\cb_swashbuckler\cspritesheet.cpp
+	"CSpriteSheet.h"
+
+1349861500 source:f:\swashbuckler\quellcode\c++\cb_swashbuckler\cwindowhandle.cpp
+	"CWindowHandle.h"
+
+1349855134 f:\swashbuckler\quellcode\c++\cb_swashbuckler\cwindowhandle.h
+	<SFML/Graphics.hpp>
+	<iostream>
+	"CLogFile.h"
+
+1350463026 source:f:\swashbuckler\quellcode\c++\cb_swashbuckler\main.cpp
+	<SFML/Audio.hpp>
+	<SFML/Graphics.hpp>
+	"CGameEngine.h"
+	"CWindowHandle.h"
+	"CDice.h"
+	"CLogFile.h"
+	<sstream>
+	<iostream>
+
+1349854540 f:\swashbuckler\quellcode\c++\cb_swashbuckler\cgameengine.h
+	"CWindowHandle.h"
+	"CSpriteSheet.h"
+	"CMouse.h"
+	"CRessourcenManager.h"
+	"CUI.h"
+	"CMapIso.h"
+	"CScenegraph.h"
+	"CStateMachine.h"
+	"CManagedFont.h"
+	"CDungeonGenerator.h"
+	"CLogFile.h"
+
+1349855720 source:f:\swashbuckler\quellcode\c++\cb_swashbuckler\cgameengine.cpp
+	"CGameEngine.h"
+
+1329823600 g:\swashbuckler\quellcode\c++\cb_swashbuckler\cresourcenmanager.h
+	<SFML/Graphics.hpp>
+
+1329822960 source:g:\swashbuckler\quellcode\c++\cb_swashbuckler\cresourcenmanager.cpp
+	"CResourcenManager.h"
+
+1349855134 g:\swashbuckler\quellcode\c++\cb_swashbuckler\cressourcenmanager.h
+	<iostream>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"CLogFile.h"
+
+1349870366 source:g:\swashbuckler\quellcode\c++\cb_swashbuckler\cressourcenmanager.cpp
+	"CRessourcenManager.h"
+
+1349860310 source:g:\swashbuckler\quellcode\c++\cb_swashbuckler\cui.cpp
+	"CUI.h"
+
+1349855134 g:\swashbuckler\quellcode\c++\cb_swashbuckler\cui.h
+	<SFML/Graphics.hpp>
+	<SFML/System/Clock.hpp>
+	"CSpriteSheet.h"
+	<iostream>
+	<fstream>
+	"CMessage.h"
+	"CManagedFont.h"
+	"CLogFile.h"
+
+1349855134 f:\swashbuckler\quellcode\c++\cb_swashbuckler\cressourcenmanager.h
+	<iostream>
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	"CLogFile.h"
+
+1349870366 source:f:\swashbuckler\quellcode\c++\cb_swashbuckler\cressourcenmanager.cpp
+	"CRessourcenManager.h"
+
+1349860310 source:f:\swashbuckler\quellcode\c++\cb_swashbuckler\cui.cpp
+	"CUI.h"
+
+1349855134 f:\swashbuckler\quellcode\c++\cb_swashbuckler\cui.h
+	<SFML/Graphics.hpp>
+	<SFML/System/Clock.hpp>
+	"CSpriteSheet.h"
+	<iostream>
+	<fstream>
+	"CMessage.h"
+	"CManagedFont.h"
+	"CLogFile.h"
+
+1330117522 source:f:\swashbuckler\quellcode\c++\cb_swashbuckler\cintro.cpp
+
+1351158220 source:f:\swashbuckler\quellcode\c++\cb_swashbuckler\cmapiso.cpp
+	"CMapIso.h"
+
+1349855132 f:\swashbuckler\quellcode\c++\cb_swashbuckler\cmapiso.h
+	<iostream>
+	<SFML/System/Clock.hpp>
+	"CSpriteSheet.h"
+	"CDungeonGenerator.h"
+	"CLogFile.h"
+
+1351158220 source:g:\swashbuckler\quellcode\c++\cb_swashbuckler\cmapiso.cpp
+	"CMapIso.h"
+
+1349855132 g:\swashbuckler\quellcode\c++\cb_swashbuckler\cmapiso.h
+	<iostream>
+	<SFML/System/Clock.hpp>
+	"CSpriteSheet.h"
+	"CDungeonGenerator.h"
+	"CLogFile.h"
+
+1349856754 source:g:\swashbuckler\quellcode\c++\cb_swashbuckler\cscenegraph.cpp
+	"CScenegraph.h"
+
+1349855134 g:\swashbuckler\quellcode\c++\cb_swashbuckler\cscenegraph.h
+	"CWindowHandle.h"
+	"CMapIso.h"
+	"CMouse.h"
+	"CUI.h"
+	"CStateMachine.h"
+	"CLogFile.h"
+
+1331709796 g:\swashbuckler\quellcode\c++\cb_swashbuckler\cspritesheet_dll.h
+	<iostream>
+	<SFML/Graphics.hpp>
+	<SFML/System/Clock.hpp>
+	"CRessourcenManager.h"
+
+1349860024 source:g:\swashbuckler\quellcode\c++\cb_swashbuckler\cstatemachine.cpp
+	"CStateMachine.h"
+
+1349855134 g:\swashbuckler\quellcode\c++\cb_swashbuckler\cstatemachine.h
+	"CLogFile.h"
+
+1350652640 g:\swashbuckler\quellcode\c++\cb_swashbuckler\clist_t.hpp
+
+1349859664 source:g:\swashbuckler\quellcode\c++\cb_swashbuckler\cmessage.cpp
+	"CMessage.h"
+
+1349856606 g:\swashbuckler\quellcode\c++\cb_swashbuckler\cmessage.h
+	<iostream>
+	"CLogFile.h"
+
+1337847196 source:g:\swashbuckler\quellcode\c++\cb_swashbuckler\cmanagedfont.cpp
+	"CManagedFont.h"
+
+1337846196 g:\swashbuckler\quellcode\c++\cb_swashbuckler\cmanagedfont.h
+	<SFML/Graphics.hpp>
+	"CRessourcenManager.h"
+	<iostream>
+
+1345204412 g:\swashbuckler\quellcode\c++\cb_swashbuckler\header\dice_debug.h
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1345205584 g:\swashbuckler\quellcode\c++\cb_swashbuckler\header\spritesheet.h
+	<windows.h>
+	<iostream>
+	<SFML/Graphics.hpp>
+	<SFML/System/Clock.hpp>
+	"CRessourcenManager.h"
+
+1346400304 g:\swashbuckler\quellcode\c++\cb_swashbuckler\header\dice_roll.h
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1345554206 source:g:\swashbuckler\quellcode\c++\cb_swashbuckler\ccharakter.cpp
+	"CCharakter.h"
+
+1345554328 g:\swashbuckler\quellcode\c++\cb_swashbuckler\ccharakter.h
+
+1351506168 source:g:\swashbuckler\quellcode\c++\cb_swashbuckler\cdungeongenerator.cpp
+	"CDungeonGenerator.h"
+
+1351162050 g:\swashbuckler\quellcode\c++\cb_swashbuckler\cdungeongenerator.h
+	"CDice.h"
+	<iostream>
+	"CLogFile.h"
+	<list>
+
+1349860662 source:g:\swashbuckler\quellcode\c++\cb_swashbuckler\clogfile.cpp
+	"CLogFile.h"
+
+1349858728 g:\swashbuckler\quellcode\c++\cb_swashbuckler\clogfile.h
+	<iostream>
+	<fstream>
+	<ostream>
+	<string>
+
+1347861016 source:g:\swashbuckler\quellcode\c++\cb_swashbuckler\cmapobject.cpp
+
+1349859826 source:g:\swashbuckler\quellcode\c++\cb_swashbuckler\cdice.cpp
+	"CDice.h"
+
+1349859826 g:\swashbuckler\quellcode\c++\cb_swashbuckler\cdice.h
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"CLogFile.h"
+
+1345554206 source:f:\swashbuckler\quellcode\c++\cb_swashbuckler\ccharakter.cpp
+	"CCharakter.h"
+
+1345554328 f:\swashbuckler\quellcode\c++\cb_swashbuckler\ccharakter.h
+
+1349859826 source:f:\swashbuckler\quellcode\c++\cb_swashbuckler\cdice.cpp
+	"CDice.h"
+
+1349859826 f:\swashbuckler\quellcode\c++\cb_swashbuckler\cdice.h
+	<windows.h>
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"CLogFile.h"
+
+1349858728 f:\swashbuckler\quellcode\c++\cb_swashbuckler\clogfile.h
+	<iostream>
+	<fstream>
+	<ostream>
+	<string>
+
+1351506168 source:f:\swashbuckler\quellcode\c++\cb_swashbuckler\cdungeongenerator.cpp
+	"CDungeonGenerator.h"
+
+1351162050 f:\swashbuckler\quellcode\c++\cb_swashbuckler\cdungeongenerator.h
+	"CDice.h"
+	<iostream>
+	"CLogFile.h"
+	<list>
+
+1349856606 f:\swashbuckler\quellcode\c++\cb_swashbuckler\cmessage.h
+	<iostream>
+	"CLogFile.h"
+
+1337846196 f:\swashbuckler\quellcode\c++\cb_swashbuckler\cmanagedfont.h
+	<SFML/Graphics.hpp>
+	"CRessourcenManager.h"
+	<iostream>
+
+1349855134 f:\swashbuckler\quellcode\c++\cb_swashbuckler\cscenegraph.h
+	"CWindowHandle.h"
+	"CMapIso.h"
+	"CMouse.h"
+	"CUI.h"
+	"CStateMachine.h"
+	"CLogFile.h"
+
+1349855134 f:\swashbuckler\quellcode\c++\cb_swashbuckler\cstatemachine.h
+	"CLogFile.h"
+
+1349860662 source:f:\swashbuckler\quellcode\c++\cb_swashbuckler\clogfile.cpp
+	"CLogFile.h"
+
+1347861016 source:f:\swashbuckler\quellcode\c++\cb_swashbuckler\cmapobject.cpp
+
+1349859664 source:f:\swashbuckler\quellcode\c++\cb_swashbuckler\cmessage.cpp
+	"CMessage.h"
+
+1349856754 source:f:\swashbuckler\quellcode\c++\cb_swashbuckler\cscenegraph.cpp
+	"CScenegraph.h"
+
+1349860024 source:f:\swashbuckler\quellcode\c++\cb_swashbuckler\cstatemachine.cpp
+	"CStateMachine.h"
+
+1351524164 source:f:\swashbuckler\quellcode\c++\cb_swashbuckler\misc.cpp
+	"Misc.h"
+
+1351524130 f:\swashbuckler\quellcode\c++\cb_swashbuckler\misc.h
+

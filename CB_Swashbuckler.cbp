@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="CB_Swashbuckler" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="Templates\;" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/CB_Swashbuckler" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/CB_Swashbuckler" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="CCharakter.cpp" />
+		<Unit filename="CCharakter.h" />
+		<Unit filename="CDice.cpp" />
+		<Unit filename="CDice.h" />
+		<Unit filename="CDungeonGenerator.cpp" />
+		<Unit filename="CDungeonGenerator.h" />
+		<Unit filename="CGameEngine.cpp" />
+		<Unit filename="CGameEngine.h" />
+		<Unit filename="CList_T.hpp">
+			<Option virtualFolder="Templates/" />
+		</Unit>
+		<Unit filename="CLogFile.cpp" />
+		<Unit filename="CLogFile.h" />
+		<Unit filename="CMapIso.cpp" />
+		<Unit filename="CMapIso.h" />
+		<Unit filename="CMapObject.cpp" />
+		<Unit filename="CMapObject.h" />
+		<Unit filename="CMessage.cpp" />
+		<Unit filename="CMessage.h" />
+		<Unit filename="CMouse.cpp" />
+		<Unit filename="CMouse.h" />
+		<Unit filename="CRessourcenManager.cpp" />
+		<Unit filename="CRessourcenManager.h" />
+		<Unit filename="CScenegraph.cpp" />
+		<Unit filename="CScenegraph.h" />
+		<Unit filename="CSpriteSheet.cpp" />
+		<Unit filename="CSpriteSheet.h" />
+		<Unit filename="CStack_T.hpp">
+			<Option virtualFolder="Templates/" />
+		</Unit>
+		<Unit filename="CStateMachine.cpp" />
+		<Unit filename="CStateMachine.h" />
+		<Unit filename="CUI.cpp" />
+		<Unit filename="CUI.h" />
+		<Unit filename="CWindowHandle.cpp" />
+		<Unit filename="CWindowHandle.h" />
+		<Unit filename="Misc.cpp" />
+		<Unit filename="Misc.h" />
+		<Unit filename="Stand.txt" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

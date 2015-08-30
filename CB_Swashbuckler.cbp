@@ -5,7 +5,6 @@
 		<Option title="CB_Swashbuckler" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="Templates\;" />
 		<Build>
 			<Target title="Debug">
 				<Option output="bin/Debug/CB_Swashbuckler" prefix_auto="1" extension_auto="1" />
@@ -14,7 +13,23 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add option="-DSFML_STATIC" />
+					<Add directory="Third Party/SFML/include" />
 				</Compiler>
+				<Linker>
+					<Add library="Third Party\SFML\lib\libvorbisfile.a" />
+					<Add library="Third Party\SFML\lib\libFLAC.a" />
+					<Add library="Third Party\SFML\lib\libfreetype.a" />
+					<Add library="Third Party\SFML\lib\libjpeg.a" />
+					<Add library="Third Party\SFML\lib\libogg.a" />
+					<Add library="Third Party\SFML\lib\libopenal32.a" />
+					<Add library="Third Party\SFML\lib\libvorbis.a" />
+					<Add library="Third Party\SFML\lib\libvorbisenc.a" />
+					<Add library="Third Party\SFML\lib\libsfml-system-d.a" />
+					<Add library="Third Party\SFML\lib\libsfml-window-d.a" />
+					<Add library="Third Party\SFML\lib\libsfml-graphics-d.a" />
+					<Add directory="Third Party/SFML/lib" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/CB_Swashbuckler" prefix_auto="1" extension_auto="1" />
@@ -23,9 +38,22 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="Third Party/SFML/include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add library="Third Party\SFML\lib\libvorbisfile.a" />
+					<Add library="Third Party\SFML\lib\libFLAC.a" />
+					<Add library="Third Party\SFML\lib\libfreetype.a" />
+					<Add library="Third Party\SFML\lib\libjpeg.a" />
+					<Add library="Third Party\SFML\lib\libogg.a" />
+					<Add library="Third Party\SFML\lib\libvorbis.a" />
+					<Add library="Third Party\SFML\lib\libvorbisenc.a" />
+					<Add library="Third Party\SFML\lib\libsfml-window-s.a" />
+					<Add library="Third Party\SFML\lib\libsfml-system-s.a" />
+					<Add library="Third Party\SFML\lib\libsfml-graphics-s.a" />
+					<Add library="Third Party\SFML\lib\libsfml-audio-s.a" />
+					<Add directory="Third Party/SFML/lib" />
 				</Linker>
 			</Target>
 		</Build>
@@ -33,46 +61,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="CCharakter.cpp" />
-		<Unit filename="CCharakter.h" />
-		<Unit filename="CDice.cpp" />
-		<Unit filename="CDice.h" />
-		<Unit filename="CDungeonGenerator.cpp" />
-		<Unit filename="CDungeonGenerator.h" />
-		<Unit filename="CGameEngine.cpp" />
-		<Unit filename="CGameEngine.h" />
-		<Unit filename="CList_T.hpp">
-			<Option virtualFolder="Templates/" />
-		</Unit>
-		<Unit filename="CLogFile.cpp" />
-		<Unit filename="CLogFile.h" />
-		<Unit filename="CMapIso.cpp" />
-		<Unit filename="CMapIso.h" />
-		<Unit filename="CMapObject.cpp" />
-		<Unit filename="CMapObject.h" />
-		<Unit filename="CMessage.cpp" />
-		<Unit filename="CMessage.h" />
-		<Unit filename="CMouse.cpp" />
-		<Unit filename="CMouse.h" />
-		<Unit filename="CRessourcenManager.cpp" />
-		<Unit filename="CRessourcenManager.h" />
-		<Unit filename="CScenegraph.cpp" />
-		<Unit filename="CScenegraph.h" />
-		<Unit filename="CSpriteSheet.cpp" />
-		<Unit filename="CSpriteSheet.h" />
-		<Unit filename="CStack_T.hpp">
-			<Option virtualFolder="Templates/" />
-		</Unit>
-		<Unit filename="CStateMachine.cpp" />
-		<Unit filename="CStateMachine.h" />
-		<Unit filename="CUI.cpp" />
-		<Unit filename="CUI.h" />
-		<Unit filename="CWindowHandle.cpp" />
-		<Unit filename="CWindowHandle.h" />
-		<Unit filename="Misc.cpp" />
-		<Unit filename="Misc.h" />
-		<Unit filename="Stand.txt" />
-		<Unit filename="main.cpp" />
+		<Unit filename="source/main.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

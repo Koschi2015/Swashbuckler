@@ -39,6 +39,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>D:\C++\CB_Swashbuckler\Third Party\SFML\include;$(IncludePath)</IncludePath>
     <ReferencePath>D:\C++\CB_Swashbuckler\Third Party\SFML\lib;$(ReferencePath)</ReferencePath>
+    <OutDir>..\Game\</OutDir>
+    <TargetName>Swashbuckler</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\Game</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>Swashbuckler</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -71,6 +79,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\source\App.cpp" />
     <ClCompile Include="..\source\CCharakter.cpp" />
     <ClCompile Include="..\source\CDice.cpp" />
     <ClCompile Include="..\source\CDungeonGenerator.cpp" />
@@ -87,10 +96,12 @@
     <ClCompile Include="..\source\CStateMachine.cpp" />
     <ClCompile Include="..\source\CUI.cpp" />
     <ClCompile Include="..\source\CWindowHandle.cpp" />
+    <ClCompile Include="..\source\Input\Mouse.cpp" />
     <ClCompile Include="..\source\main.cpp" />
     <ClCompile Include="..\source\Misc.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\source\App.hpp" />
     <ClInclude Include="..\source\CCharakter.h" />
     <ClInclude Include="..\source\CDice.h" />
     <ClInclude Include="..\source\CDungeonGenerator.h" />
@@ -109,6 +120,7 @@
     <ClInclude Include="..\source\CStateMachine.h" />
     <ClInclude Include="..\source\CUI.h" />
     <ClInclude Include="..\source\CWindowHandle.h" />
+    <ClInclude Include="..\source\Input\Mouse.hpp" />
     <ClInclude Include="..\source\Misc.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

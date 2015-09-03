@@ -4,6 +4,11 @@
 #include "SFML\Window\Mouse.hpp"
 #include <vector>
 
+namespace sf
+{
+    class RenderWindow;
+}
+
 struct ButtonState
 {
 public:
@@ -35,9 +40,10 @@ class Mouse
 {
 private:
     std::vector<MouseButton> m_buttons;
+    sf::Vector2f m_position;
     bool m_mouseWheelDown;
     bool m_mouseWheelUp;
-
+    
 public:
     Mouse();
     virtual ~Mouse();
@@ -56,6 +62,9 @@ public:
     bool isButtonPressed(const sf::Mouse::Button button) const;
     bool isButtonReleased(const sf::Mouse::Button button) const;
     bool isButtonDown(const sf::Mouse::Button button) const;
+
+    const sf::Vector2f& getGlobalPosition() const;
+    sf::Vector2f getLocalPosition(const sf::RenderWindow& relativTo) const;
 };
 
 #endif

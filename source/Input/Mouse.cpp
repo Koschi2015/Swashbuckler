@@ -1,4 +1,5 @@
 #include "Mouse.hpp"
+#include <SFML\Graphics\RenderWindow.hpp>
 #include <stdexcept>
 
 Mouse::Mouse()
@@ -28,6 +29,8 @@ void Mouse::capture()
         it->m_state.m_stillPressed = it->m_state.m_isDown;
         it->m_state.m_released = last && !it->m_state.m_stillPressed;
     }
+
+    m_position = static_cast<sf::Vector2f>(sf::Mouse::getPosition());
 
     m_mouseWheelDown = false;
     m_mouseWheelUp = false;
@@ -110,4 +113,14 @@ bool Mouse::isWheelMovedUp() const
 bool Mouse::isWheelMovedDown() const
 {
     return m_mouseWheelDown;
+}
+
+const sf::Vector2f& Mouse::getGlobalPosition() const
+{
+    return m_position;
+}
+
+sf::Vector2f Mouse::getLocalPosition(const sf::RenderWindow& relativTo) const
+{
+    return static_cast<sf::Vector2f>(sf::Mouse::getPosition(relativTo));
 }

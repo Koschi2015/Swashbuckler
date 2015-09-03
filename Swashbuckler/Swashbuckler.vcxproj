@@ -96,6 +96,7 @@
     <ClCompile Include="..\source\CStateMachine.cpp" />
     <ClCompile Include="..\source\CUI.cpp" />
     <ClCompile Include="..\source\CWindowHandle.cpp" />
+    <ClCompile Include="..\source\Input\Keyboard.cpp" />
     <ClCompile Include="..\source\Input\Mouse.cpp" />
     <ClCompile Include="..\source\main.cpp" />
     <ClCompile Include="..\source\Misc.cpp" />
@@ -120,6 +121,7 @@
     <ClInclude Include="..\source\CStateMachine.h" />
     <ClInclude Include="..\source\CUI.h" />
     <ClInclude Include="..\source\CWindowHandle.h" />
+    <ClInclude Include="..\source\Input\Keyboard.hpp" />
     <ClInclude Include="..\source\Input\Mouse.hpp" />
     <ClInclude Include="..\source\Misc.h" />
   </ItemGroup>

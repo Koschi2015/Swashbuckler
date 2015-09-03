@@ -81,6 +81,9 @@
     <ClCompile Include="..\source\Input\Mouse.cpp">
       <Filter>Quelldateien\Input</Filter>
     </ClCompile>
+    <ClCompile Include="..\source\Input\Keyboard.cpp">
+      <Filter>Quelldateien\Input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\source\CGameEngine.h">
@@ -144,6 +147,9 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="..\source\Input\Mouse.hpp">
+      <Filter>Headerdateien\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Input\Keyboard.hpp">
       <Filter>Headerdateien\Input</Filter>
     </ClInclude>
   </ItemGroup>

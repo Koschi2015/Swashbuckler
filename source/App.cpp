@@ -2,10 +2,12 @@
 #include <SFML\Window\Event.hpp>
 
 App::App() :
-    m_quit(false),
-    m_window(sf::VideoMode(800, 600), "Swashbuckler")
+    m_window(sf::VideoMode(800, 600), "Swashbuckler"),
+    m_quit(false)
 {
     m_mouse.registerButton(sf::Mouse::Left);
+
+    m_frameTime.restart();
 }
 
 void App::run()
@@ -20,6 +22,7 @@ void App::run()
 void App::draw()
 {
     m_window.clear();
+    m_stateManager.draw(m_window);
     m_window.display();
 }
 
@@ -49,4 +52,6 @@ void App::update()
         if(sf::Event::KeyReleased == event.type)
             m_keyboard.notifyKeyReleased(event.key.code);
     }
+
+    m_stateManager.update(m_frameTime.getElapsedTime().asSeconds());
 }

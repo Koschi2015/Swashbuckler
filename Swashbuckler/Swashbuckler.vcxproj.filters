@@ -19,6 +19,12 @@
     <Filter Include="Quelldateien\Input">
       <UniqueIdentifier>{f9e1f472-6140-45d0-a396-c46369e299cb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headerdateien\State">
+      <UniqueIdentifier>{0ca910a0-5d71-41f7-a973-656c0c2a4a0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\State">
+      <UniqueIdentifier>{4b3e6290-dc4b-4b06-9041-f2702be0d699}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\source\main.cpp">
@@ -83,6 +89,12 @@
     </ClCompile>
     <ClCompile Include="..\source\Input\Keyboard.cpp">
       <Filter>Quelldateien\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\State\State.cpp">
+      <Filter>Quelldateien\State</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\State\StateManager.cpp">
+      <Filter>Quelldateien\State</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +163,12 @@
     </ClInclude>
     <ClInclude Include="..\source\Input\Keyboard.hpp">
       <Filter>Headerdateien\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\State\State.hpp">
+      <Filter>Headerdateien\State</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\State\StateManager.hpp">
+      <Filter>Headerdateien\State</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

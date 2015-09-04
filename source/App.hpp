@@ -3,7 +3,9 @@
 
 #include "Input/Mouse.hpp"
 #include "Input/Keyboard.hpp"
+#include "State/StateManager.hpp"
 #include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/System/Clock.hpp>
 
 class App
 {
@@ -12,9 +14,13 @@ private:
     void draw();
 
     sf::RenderWindow m_window;
+    
+    sf::Clock m_frameTime;
 
     Mouse m_mouse;
     Keyboard m_keyboard;
+
+    StateManager m_stateManager;
 
     bool m_quit;
 

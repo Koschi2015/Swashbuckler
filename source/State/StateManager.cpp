@@ -1,18 +1,29 @@
 #include "StateManager.hpp"
 
 StateManager::StateManager() :
-    m_currentState(nullptr)
+    m_currentState(nullptr),
+    m_lastFrameTime(0),
+    m_pauseDelayTime(0),
+    m_paused(false)
 { }
 
 void StateManager::update(float frameTime)
 {
-    if(m_currentState)
-        m_currentState->update(frameTime);
+    if(m_paused)
+    {
+        float delta = frameTime - m_lastFrameTime;
+        m_pauseDelayTime += delta;
+    }
+
+    if(m_currentState && !m_paused)
+        m_currentState->update(frameTime - m_pauseDelayTime);
+
+    m_lastFrameTime = frameTime;
 }
 
 void StateManager::draw(const sf::RenderWindow& window)
 {
-    if(m_currentState)
+    if(m_currentState && !m_paused)
         m_currentState->draw(window);
 }
 

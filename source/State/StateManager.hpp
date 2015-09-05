@@ -14,6 +14,11 @@ private:
     StateId m_currentStateId;
 
     std::map<StateId, std::unique_ptr<State>> m_states;
+
+    float m_lastFrameTime;
+    float m_pauseDelayTime;
+
+    bool m_paused;
 public:
     StateManager();
 

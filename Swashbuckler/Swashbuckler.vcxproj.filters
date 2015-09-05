@@ -25,6 +25,18 @@
     <Filter Include="Quelldateien\State">
       <UniqueIdentifier>{4b3e6290-dc4b-4b06-9041-f2702be0d699}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headerdateien\GUI">
+      <UniqueIdentifier>{e9bcac89-e6e5-4d1b-a321-5ca1773af745}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\GUI">
+      <UniqueIdentifier>{3223c0e4-2a82-4115-b7c6-d84c34a37d37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Resources">
+      <UniqueIdentifier>{79ae4a2c-f5bd-431f-947a-88e67a9d2487}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Resources">
+      <UniqueIdentifier>{b83ee0fc-dcdd-4a97-ae43-77cec1dcf37d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\source\main.cpp">
@@ -95,6 +107,9 @@
     </ClCompile>
     <ClCompile Include="..\source\State\StateManager.cpp">
       <Filter>Quelldateien\State</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\GUI\VirtualWindow.cpp">
+      <Filter>Quelldateien\GUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +184,12 @@
     </ClInclude>
     <ClInclude Include="..\source\State\StateManager.hpp">
       <Filter>Headerdateien\State</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\GUI\VirtualWindow.hpp">
+      <Filter>Headerdateien\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Resources\ResourceManager.hpp">
+      <Filter>Headerdateien\Resources</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

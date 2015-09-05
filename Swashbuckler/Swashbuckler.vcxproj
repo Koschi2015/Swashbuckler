@@ -37,7 +37,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>..\Third Party\SFML\include;..\Third Party\tinyxml2\include;$(IncludePath)</IncludePath>
+    <IncludePath>D:\C++\CB_Swashbuckler\Third Party\SFML\include;D:\C++\CB_Swashbuckler\Third Party\tinyxml2\include;$(IncludePath)</IncludePath>
     <ReferencePath>..\Third Party\SFML\lib;..\Third Party\tinyxml2\lib;$(ReferencePath)</ReferencePath>
     <OutDir>..\Game\</OutDir>
     <TargetName>Swashbuckler</TargetName>
@@ -55,7 +55,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Third Party\SFML\include;..\Third Party\tinyxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\C++\CB_Swashbuckler\Third Party\SFML\include;D:\C++\CB_Swashbuckler\Third Party\tinyxml2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -103,6 +103,7 @@
     <ClCompile Include="..\source\Input\Mouse.cpp" />
     <ClCompile Include="..\source\main.cpp" />
     <ClCompile Include="..\source\Misc.cpp" />
+    <ClCompile Include="..\source\Resources\ResourceManager.cpp" />
     <ClCompile Include="..\source\State\State.cpp" />
     <ClCompile Include="..\source\State\StateManager.cpp" />
   </ItemGroup>

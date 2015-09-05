@@ -111,6 +111,9 @@
     <ClCompile Include="..\source\GUI\VirtualWindow.cpp">
       <Filter>Quelldateien\GUI</Filter>
     </ClCompile>
+    <ClCompile Include="..\source\Resources\ResourceManager.cpp">
+      <Filter>Quelldateien\Resources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\source\CGameEngine.h">

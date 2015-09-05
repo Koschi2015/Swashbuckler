@@ -3,11 +3,14 @@
 
 App::App() :
     m_window(sf::VideoMode(800, 600), "Swashbuckler"),
+    m_resourceManager("resources/resources.nfo"),
     m_quit(false)
 {
     m_mouse.registerButton(sf::Mouse::Left);
 
     m_frameTime.restart();
+
+    auto test = m_resourceManager.getTexture("mouse");
 }
 
 void App::run()

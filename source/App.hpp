@@ -4,6 +4,7 @@
 #include "Input/Mouse.hpp"
 #include "Input/Keyboard.hpp"
 #include "State/StateManager.hpp"
+#include "Resources/ResourceManager.hpp"
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Clock.hpp>
 
@@ -21,6 +22,7 @@ private:
     Keyboard m_keyboard;
 
     StateManager m_stateManager;
+    ResourceManager m_resourceManager;
 
     bool m_quit;
 

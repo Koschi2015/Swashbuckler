@@ -4,9 +4,6 @@
 #include "State.hpp"
 #include <map>
 
-enum StateId {None,
-              PlayStateId};
-
 class StateManager
 {
 private:
@@ -23,9 +20,11 @@ public:
     StateManager();
 
     void update(float frameTime);
-    void draw(const sf::RenderWindow& window);
+    void draw(sf::RenderWindow& window);
 
     void registerState(StateId id, std::unique_ptr<State> state);
+
+    void setState(StateId id);
 };
 
 #endif

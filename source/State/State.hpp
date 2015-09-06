@@ -9,25 +9,32 @@ namespace sf
     class RenderWindow;
 }
 
+enum StateId {None,
+              PlayStateId};
+
 class State
 {
 private:
-    const Mouse& m_mouse;
-    const Keyboard& m_keyboard;
+    Mouse& m_mouse;
+    Keyboard& m_keyboard;
 
 protected:
-    const Mouse& getMouse() const;
-    const Keyboard& getKeyboard() const;
+    Mouse& getMouse() const;
+    Keyboard& getKeyboard() const;
 
 public:
-    State(const Mouse& mouse,
-          const Keyboard& keyboard);
+    State(Mouse& mouse,
+          Keyboard& keyboard);
 
     virtual ~State();
 
     virtual void update(float frameTime) = 0;
 
-    virtual void draw(const sf::RenderWindow& window) = 0;
+    virtual void draw(sf::RenderWindow& window) = 0;
+
+    virtual void onEnter() = 0;
+
+    virtual void onLeave() = 0;
 };
 
 #endif

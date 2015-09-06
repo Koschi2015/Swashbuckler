@@ -1,5 +1,7 @@
 #include "App.hpp"
-#include <SFML\Window\Event.hpp>
+#include <SFML/Window/Event.hpp>
+#include <SFML/Graphics/Rect.hpp>
+#include "State/PlayState.hpp"
 
 App::App() :
     m_window(sf::VideoMode(800, 600), "Swashbuckler"),
@@ -9,8 +11,8 @@ App::App() :
     m_mouse.registerButton(sf::Mouse::Left);
 
     m_frameTime.restart();
-
-    auto test = m_resourceManager.getTexture("mouse");
+    m_stateManager.registerState(PlayStateId, std::unique_ptr<PlayState>(new PlayState(m_mouse, m_keyboard, m_resourceManager, m_window)));
+    m_stateManager.setState(PlayStateId);
 }
 
 void App::run()
@@ -55,6 +57,5 @@ void App::update()
         if(sf::Event::KeyReleased == event.type)
             m_keyboard.notifyKeyReleased(event.key.code);
     }
-
     m_stateManager.update(m_frameTime.getElapsedTime().asSeconds());
 }

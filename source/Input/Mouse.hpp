@@ -43,7 +43,7 @@ private:
     sf::Vector2f m_position;
     bool m_mouseWheelDown;
     bool m_mouseWheelUp;
-    
+    bool m_cursorVisible;
 public:
     Mouse();
     virtual ~Mouse();
@@ -65,6 +65,10 @@ public:
 
     const sf::Vector2f& getGlobalPosition() const;
     sf::Vector2f getLocalPosition(const sf::RenderWindow& relativTo) const;
+
+    void hideSystemCursor(sf::RenderWindow& window);
+    void showSystemCursor(sf::RenderWindow& window);
+    bool isSystemCursorVisible() const;
 };
 
 #endif

@@ -21,7 +21,7 @@ void StateManager::update(float frameTime)
     m_lastFrameTime = frameTime;
 }
 
-void StateManager::draw(const sf::RenderWindow& window)
+void StateManager::draw(sf::RenderWindow& window)
 {
     if(m_currentState && !m_paused)
         m_currentState->draw(window);
@@ -34,4 +34,19 @@ void StateManager::registerState(StateId id, std::unique_ptr<State> state)
         throw std::runtime_error("State is allready registered.");
 
     m_states[id] = std::move(state);
+}
+
+void StateManager::setState(StateId id)
+{
+    auto state = m_states.find(id);
+    if(state == end(m_states))
+        throw std::runtime_error("State is not registered.");
+
+    if(m_currentState)
+        m_currentState->onLeave();
+
+    m_currentState = state->second.get();
+    m_currentStateId = id;
+
+    m_currentState->onEnter();
 }

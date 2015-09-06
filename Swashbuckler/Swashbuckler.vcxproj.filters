@@ -37,6 +37,12 @@
     <Filter Include="Quelldateien\Resources">
       <UniqueIdentifier>{b83ee0fc-dcdd-4a97-ae43-77cec1dcf37d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Headerdateien\Map">
+      <UniqueIdentifier>{356bf272-9cd5-4948-814c-2ce179ce79c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Map">
+      <UniqueIdentifier>{40fd9779-f228-4e30-8a53-093251fc2764}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\source\main.cpp">
@@ -113,6 +119,15 @@
     </ClCompile>
     <ClCompile Include="..\source\Resources\ResourceManager.cpp">
       <Filter>Quelldateien\Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\State\PlayState.cpp">
+      <Filter>Quelldateien\State</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Map\Tile.cpp">
+      <Filter>Quelldateien\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Map\Map.cpp">
+      <Filter>Quelldateien\Map</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -193,6 +208,15 @@
     </ClInclude>
     <ClInclude Include="..\source\Resources\ResourceManager.hpp">
       <Filter>Headerdateien\Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\State\PlayState.hpp">
+      <Filter>Headerdateien\State</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Map\Tile.hpp">
+      <Filter>Headerdateien\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Map\Map.hpp">
+      <Filter>Headerdateien\Map</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

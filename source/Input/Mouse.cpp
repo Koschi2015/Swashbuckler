@@ -124,3 +124,20 @@ sf::Vector2f Mouse::getLocalPosition(const sf::RenderWindow& relativTo) const
 {
     return static_cast<sf::Vector2f>(sf::Mouse::getPosition(relativTo));
 }
+
+void Mouse::hideSystemCursor(sf::RenderWindow& window)
+{
+    window.setMouseCursorVisible(false);
+    m_cursorVisible = false;
+}
+
+void Mouse::showSystemCursor(sf::RenderWindow& window)
+{
+    window.setMouseCursorVisible(true);
+    m_cursorVisible = true;
+}
+
+bool Mouse::isSystemCursorVisible() const
+{
+    return m_cursorVisible;
+}

@@ -3,7 +3,9 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 
 Map::Map(ResourceManager& resourceManager) :
-    m_resourceManager(resourceManager)
+    m_resourceManager(resourceManager),
+    m_currentMapSheet(nullptr),
+    m_currentTexture(nullptr)
 { }
 
 void Map::update(float frameTime)

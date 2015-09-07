@@ -4,6 +4,7 @@
 #include <unordered_map>
 #include <string>
 #include <SFML/Graphics/Texture.hpp>
+#include "SpriteSheet.hpp"
 
 namespace tinyxml2
 {
@@ -15,13 +16,21 @@ class ResourceManager
 private:
     std::string m_fileName;
 
-    std::unordered_map<std::string, std::unique_ptr<sf::Texture>> m_textures;
+    sf::Texture* loadTexture(std::string& file);
     void parseTexture(tinyxml2::XMLDocument& doc);
+    std::unordered_map<std::string, std::string> m_textureKeys;
+    std::unordered_map<std::string, std::unique_ptr<sf::Texture>> m_textures;
+    
+    SpriteSheet* loadSpriteSheet(std::string& file);
+    void parseSpriteSheet(tinyxml2::XMLDocument& doc);
+    std::unordered_map<std::string, std::string> m_spriteSheetKeys;
+    std::unordered_map<std::string, std::unique_ptr<SpriteSheet>> m_spriteSheets;
 
 public:
     ResourceManager(const std::string& fileName);
 
-    const sf::Texture* getTexture(const std::string& key) const;
+    const sf::Texture* getTexture(const std::string& key);
+    SpriteSheet* getSpriteSheet(const std::string& key);
 };
 
 #endif

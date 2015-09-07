@@ -98,7 +98,6 @@
     <ClCompile Include="..\source\CStateMachine.cpp" />
     <ClCompile Include="..\source\CUI.cpp" />
     <ClCompile Include="..\source\CWindowHandle.cpp" />
-    <ClCompile Include="..\source\GUI\VirtualWindow.cpp" />
     <ClCompile Include="..\source\Input\Keyboard.cpp" />
     <ClCompile Include="..\source\Input\Mouse.cpp" />
     <ClCompile Include="..\source\main.cpp" />
@@ -106,6 +105,7 @@
     <ClCompile Include="..\source\Map\Tile.cpp" />
     <ClCompile Include="..\source\Misc.cpp" />
     <ClCompile Include="..\source\Resources\ResourceManager.cpp" />
+    <ClCompile Include="..\source\Resources\SpriteSheet.cpp" />
     <ClCompile Include="..\source\State\PlayState.cpp" />
     <ClCompile Include="..\source\State\State.cpp" />
     <ClCompile Include="..\source\State\StateManager.cpp" />
@@ -130,13 +130,13 @@
     <ClInclude Include="..\source\CStateMachine.h" />
     <ClInclude Include="..\source\CUI.h" />
     <ClInclude Include="..\source\CWindowHandle.h" />
-    <ClInclude Include="..\source\GUI\VirtualWindow.hpp" />
     <ClInclude Include="..\source\Input\Keyboard.hpp" />
     <ClInclude Include="..\source\Input\Mouse.hpp" />
     <ClInclude Include="..\source\Map\Map.hpp" />
     <ClInclude Include="..\source\Map\Tile.hpp" />
     <ClInclude Include="..\source\Misc.h" />
     <ClInclude Include="..\source\Resources\ResourceManager.hpp" />
+    <ClInclude Include="..\source\Resources\SpriteSheet.hpp" />
     <ClInclude Include="..\source\State\PlayState.hpp" />
     <ClInclude Include="..\source\State\State.hpp" />
     <ClInclude Include="..\source\State\StateManager.hpp" />

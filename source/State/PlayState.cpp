@@ -6,14 +6,16 @@
 
 PlayState::PlayState(Mouse& mouse,
                      Keyboard& keyboard,
-                     const ResourceManager& resourceManager,
+                     ResourceManager& resourceManager,
                      sf::RenderWindow& window) :
     State(mouse, keyboard),
     m_resourceManager(resourceManager),
-    m_window(window)
+    m_window(window),
+    m_mouseSpriteSheet(nullptr)
 {
     m_mouseIcon.setTexture(*m_resourceManager.getTexture("mouse"));
-    m_mouseIcon.setTextureRect(sf::IntRect(0, 128, 32, 32));
+    m_mouseSpriteSheet = m_resourceManager.getSpriteSheet("mouse");
+    m_mouseIcon.setTextureRect(m_mouseSpriteSheet->getTextureRect("arrow"));
     m_mouseIcon.setPosition(State::getMouse().getLocalPosition(m_window));
 }
 

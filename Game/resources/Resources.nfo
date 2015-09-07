@@ -1,3 +1,7 @@
 <textures>
-	<texture name="mouse" file="resources/textures/Mouse Set.png" />
+	<texture name="mouse" file="resources/Textures/Mouse Set.png" />
 </textures>
+
+<spritesheets>
+	<spritesheet name="mouse" file="resources/SpriteSheets/Mouse.sps" />
+</spritesheets>

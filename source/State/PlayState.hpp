@@ -5,18 +5,20 @@
 #include <SFML/Graphics/Sprite.hpp>
 
 class ResourceManager;
+class SpriteSheet;
 
 class PlayState : public State
 {
 private:
-    const ResourceManager& m_resourceManager;
+    ResourceManager& m_resourceManager;
     sf::RenderWindow& m_window;
 
     sf::Sprite m_mouseIcon;
+    SpriteSheet* m_mouseSpriteSheet;
 public:
     PlayState(Mouse& mouse,
               Keyboard& keyboard,
-              const ResourceManager& resourceManagaer,
+              ResourceManager& resourceManagaer,
               sf::RenderWindow& window);
 
     void update(float frameTime);

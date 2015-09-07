@@ -5,9 +5,11 @@
 #include "Tile.hpp"
 
 class ResourceManager;
+class SpriteSheet;
 namespace sf
 {
     class RenderWindow;
+    class Texture;
 }
 
 class Map
@@ -15,6 +17,8 @@ class Map
 private:
     std::vector<Tile> m_Tiles;
     ResourceManager& m_resourceManager;
+    SpriteSheet* m_currentMapSheet;
+    sf::Texture* m_currentTexture;
 
 public:
     Map(ResourceManager& m_resourceManager);

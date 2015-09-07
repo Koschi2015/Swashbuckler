@@ -114,9 +114,6 @@
     <ClCompile Include="..\source\State\StateManager.cpp">
       <Filter>Quelldateien\State</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\GUI\VirtualWindow.cpp">
-      <Filter>Quelldateien\GUI</Filter>
-    </ClCompile>
     <ClCompile Include="..\source\Resources\ResourceManager.cpp">
       <Filter>Quelldateien\Resources</Filter>
     </ClCompile>
@@ -128,6 +125,9 @@
     </ClCompile>
     <ClCompile Include="..\source\Map\Map.cpp">
       <Filter>Quelldateien\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="..\source\Resources\SpriteSheet.cpp">
+      <Filter>Quelldateien\Resources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -203,9 +203,6 @@
     <ClInclude Include="..\source\State\StateManager.hpp">
       <Filter>Headerdateien\State</Filter>
     </ClInclude>
-    <ClInclude Include="..\source\GUI\VirtualWindow.hpp">
-      <Filter>Headerdateien\GUI</Filter>
-    </ClInclude>
     <ClInclude Include="..\source\Resources\ResourceManager.hpp">
       <Filter>Headerdateien\Resources</Filter>
     </ClInclude>
@@ -217,6 +214,9 @@
     </ClInclude>
     <ClInclude Include="..\source\Map\Map.hpp">
       <Filter>Headerdateien\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Resources\SpriteSheet.hpp">
+      <Filter>Headerdateien\Resources</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

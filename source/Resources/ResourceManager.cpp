@@ -9,6 +9,20 @@ ResourceManager::ResourceManager(const std::string& fileName) :
         throw std::runtime_error("The file '" + m_fileName + "' don't exist.");
 
     parseTexture(doc);
+    parseSpriteSheet(doc);
+}
+
+sf::Texture* ResourceManager::loadTexture(std::string& file)
+{
+    sf::Texture* texture = new sf::Texture;
+    if(!texture->loadFromFile(file))
+    {
+        delete texture;
+        texture = 0;
+        throw std::runtime_error("The file '" + file + "' don't exist.");
+    }
+
+    return texture;
 }
 
 void ResourceManager::parseTexture(tinyxml2::XMLDocument& doc)
@@ -21,23 +35,68 @@ void ResourceManager::parseTexture(tinyxml2::XMLDocument& doc)
             std::string name = it->Attribute("name");
             std::string file = it->Attribute("file");
 
-            auto existingTexture = m_textures.find(name);
-            if(existingTexture != end(m_textures))
-                throw std::runtime_error("Texture is allready loaded.");
+            auto existingKey = m_textureKeys.find(name);
+            if(existingKey != end(m_textureKeys))
+                throw std::runtime_error("Texturekey is allready registered.");
 
-            sf::Texture* texture = new sf::Texture;
-            if(!texture->loadFromFile(file))
-                throw std::runtime_error("The file '" + file + "' don't exist.");
-
-            m_textures[name] = std::unique_ptr<sf::Texture>(std::move(texture));
+            m_textureKeys[name] = file;
         }
     }
 }
 
-const sf::Texture* ResourceManager::getTexture(const std::string& key) const
+const sf::Texture* ResourceManager::getTexture(const std::string& key)
 {
-    auto result = m_textures.find(key);
-    if(result == end(m_textures))
+    auto existingKey = m_textureKeys.find(key);
+    if(existingKey == end(m_textureKeys))
         throw std::runtime_error("TextureKey '" + key + "' not found.");
-    return result->second.get();
+
+    auto existingTexture = m_textures.find(key);
+    if(existingTexture == end(m_textures))
+        m_textures[key] = std::unique_ptr<sf::Texture>(std::move(loadTexture(existingKey->second)));
+
+    return m_textures[key].get();
+}
+
+SpriteSheet* ResourceManager::loadSpriteSheet(std::string& file)
+{
+    SpriteSheet* spriteSheet = new SpriteSheet;
+    if(!spriteSheet->loadFromFile(file))
+    {
+        delete spriteSheet;
+        spriteSheet = 0;
+        throw std::runtime_error("The file '" + file + "' don't exist.");
+    }
+
+    return spriteSheet;
+}
+void ResourceManager::parseSpriteSheet(tinyxml2::XMLDocument& doc)
+{
+    if(auto group = doc.FirstChildElement("spritesheets"))
+    {
+        for(auto it = group->FirstChildElement("spritesheet");
+            it != nullptr; it = it->NextSiblingElement("spritesheet"))
+        {
+            std::string name = it->Attribute("name");
+            std::string file = it->Attribute("file");
+
+            auto existingKey = m_spriteSheetKeys.find(name);
+            if(existingKey != end(m_spriteSheetKeys))
+                throw std::runtime_error("SpriteSheetKey is allready registered.");
+
+            m_spriteSheetKeys[name] = file;
+        }
+    }
+}
+
+SpriteSheet* ResourceManager::getSpriteSheet(const std::string& key)
+{
+    auto existingKey = m_spriteSheetKeys.find(key);
+    if(existingKey == end(m_spriteSheetKeys))
+        throw std::runtime_error("TextureKey '" + key + "' not found.");
+
+    auto existingSpriteSheet = m_spriteSheets.find(key);
+    if(existingSpriteSheet == end(m_spriteSheets))
+        m_spriteSheets[key] = std::unique_ptr<SpriteSheet>(std::move(loadSpriteSheet(existingKey->second)));
+
+    return m_spriteSheets[key].get();
 }

@@ -1,4 +1,5 @@
 #include "SpriteSheet.hpp"
+#include "../Misc/Utility.hpp"
 #include <tinyxml2.h>
 
 SpriteSheet::SpriteSheet(const std::string& fileName) :
@@ -84,4 +85,16 @@ sf::Vector2f SpriteSheet::getOrigin(const std::string& key) const
 {
     auto data = get(key);
     return sf::Vector2f(data.originX, data.originY);
+}
+
+sf::IntRect SpriteSheet::getTextureRect(const std::string& key, unsigned int index) const
+{
+    std::string extendedKey = key + ":" + utility::toString(index);
+    return getTextureRect(extendedKey);
+}
+
+sf::Vector2f SpriteSheet::getOrigin(const std::string& key, unsigned int index) const
+{
+    std::string extendedKey = key + ":" + utility::toString(index);
+    return getOrigin(extendedKey);
 }

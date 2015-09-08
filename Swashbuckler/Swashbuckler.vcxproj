@@ -104,6 +104,7 @@
     <ClCompile Include="..\source\Map\Map.cpp" />
     <ClCompile Include="..\source\Map\Tile.cpp" />
     <ClCompile Include="..\source\Misc.cpp" />
+    <ClCompile Include="..\source\Misc\Utility.cpp" />
     <ClCompile Include="..\source\Resources\ResourceManager.cpp" />
     <ClCompile Include="..\source\Resources\SpriteSheet.cpp" />
     <ClCompile Include="..\source\State\PlayState.cpp" />
@@ -135,6 +136,10 @@
     <ClInclude Include="..\source\Map\Map.hpp" />
     <ClInclude Include="..\source\Map\Tile.hpp" />
     <ClInclude Include="..\source\Misc.h" />
+    <ClInclude Include="..\source\Misc\Utility.hpp" />
+    <ClInclude Include="..\source\Provider\Provider.hpp" />
+    <ClInclude Include="..\source\Provider\SingleProvider.hpp" />
+    <ClInclude Include="..\source\Provider\StaticProvider.hpp" />
     <ClInclude Include="..\source\Resources\ResourceManager.hpp" />
     <ClInclude Include="..\source\Resources\SpriteSheet.hpp" />
     <ClInclude Include="..\source\State\PlayState.hpp" />

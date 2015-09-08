@@ -35,7 +35,9 @@ public:
     std::string getTextureName() const;
     bool loadFromFile(const std::string& fileName);
     sf::IntRect getTextureRect(const std::string& key) const;
+    sf::IntRect getTextureRect(const std::string& key, unsigned int index) const;
     sf::Vector2f getOrigin(const std::string& key) const;
+    sf::Vector2f getOrigin(const std::string& key, unsigned int index) const;
 };
 
 #endif

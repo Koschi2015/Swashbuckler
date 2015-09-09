@@ -11,7 +11,8 @@ private:
     float m_value;
 
 public:
-    StaticProvider(const float value) : m_value(value)
+    StaticProvider(const float value) :
+        m_value(value)
     { }
 
     virtual float getValue() override

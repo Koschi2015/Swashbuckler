@@ -242,5 +242,8 @@
     <ClInclude Include="..\source\Provider\StaticProvider.hpp">
       <Filter>Headerdateien\Provider</Filter>
     </ClInclude>
+    <ClInclude Include="..\source\Provider\MultiProvider.hpp">
+      <Filter>Headerdateien\Provider</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

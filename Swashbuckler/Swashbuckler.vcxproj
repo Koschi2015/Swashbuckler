@@ -137,6 +137,7 @@
     <ClInclude Include="..\source\Map\Tile.hpp" />
     <ClInclude Include="..\source\Misc.h" />
     <ClInclude Include="..\source\Misc\Utility.hpp" />
+    <ClInclude Include="..\source\Provider\MultiProvider.hpp" />
     <ClInclude Include="..\source\Provider\Provider.hpp" />
     <ClInclude Include="..\source\Provider\SingleProvider.hpp" />
     <ClInclude Include="..\source\Provider\StaticProvider.hpp" />

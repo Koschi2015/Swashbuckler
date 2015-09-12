@@ -38,4 +38,4 @@ protected:
     }
 };
 
-#endif //MULTI_PROVIDER_HPP
+#endif

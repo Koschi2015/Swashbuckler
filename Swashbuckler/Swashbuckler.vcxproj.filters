@@ -141,6 +141,9 @@
     <ClCompile Include="..\source\Misc\Utility.cpp">
       <Filter>Quelldateien\Misc</Filter>
     </ClCompile>
+    <ClCompile Include="..\source\Misc\FPS.cpp">
+      <Filter>Quelldateien\Misc</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\source\CGameEngine.h">
@@ -244,6 +247,9 @@
     </ClInclude>
     <ClInclude Include="..\source\Provider\MultiProvider.hpp">
       <Filter>Headerdateien\Provider</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Misc\FPS.hpp">
+      <Filter>Headerdateien\Misc</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

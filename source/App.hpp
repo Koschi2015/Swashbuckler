@@ -5,6 +5,7 @@
 #include "Input/Keyboard.hpp"
 #include "State/StateManager.hpp"
 #include "Resources/ResourceManager.hpp"
+#include "Misc/FPS.hpp"
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Clock.hpp>
 
@@ -26,6 +27,7 @@ private:
 
     bool m_quit;
 
+    FPS m_fpsCounter;
 public:
     App();
 

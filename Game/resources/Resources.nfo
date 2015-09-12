@@ -5,3 +5,8 @@
 <spritesheets>
 	<spritesheet name="mouse" file="resources/SpriteSheets/Mouse.sps" />
 </spritesheets>
+
+<fonts>
+	<font name="gooey" file="resources/Fonts/gooey.ttf" />
+	<font name="modernefraktur" file="resources/Fonts/ModerneFraktur.ttf" />
+</fonts>

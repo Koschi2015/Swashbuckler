@@ -3,10 +3,12 @@
 #include <SFML/Graphics/Rect.hpp>
 #include "State/PlayState.hpp"
 
+
 App::App() :
     m_window(sf::VideoMode(800, 600), "Swashbuckler"),
     m_resourceManager("resources/resources.nfo"),
-    m_quit(false)
+    m_quit(false),
+    m_fpsCounter(*m_resourceManager.getFont("modernefraktur"))
 {
     m_mouse.registerButton(sf::Mouse::Left);
 
@@ -27,6 +29,7 @@ void App::run()
 void App::draw()
 {
     m_window.clear();
+    m_fpsCounter.draw(m_window);
     m_stateManager.draw(m_window);
     m_window.display();
 }
@@ -57,5 +60,6 @@ void App::update()
         if(sf::Event::KeyReleased == event.type)
             m_keyboard.notifyKeyReleased(event.key.code);
     }
+    m_fpsCounter.update(m_frameTime.getElapsedTime().asSeconds());
     m_stateManager.update(m_frameTime.getElapsedTime().asSeconds());
 }

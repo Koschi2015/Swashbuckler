@@ -43,7 +43,7 @@
     <TargetName>Swashbuckler</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>..\Game</OutDir>
+    <OutDir>..\Game\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <TargetName>Swashbuckler</TargetName>
@@ -104,6 +104,7 @@
     <ClCompile Include="..\source\Map\Map.cpp" />
     <ClCompile Include="..\source\Map\Tile.cpp" />
     <ClCompile Include="..\source\Misc.cpp" />
+    <ClCompile Include="..\source\Misc\FPS.cpp" />
     <ClCompile Include="..\source\Misc\Utility.cpp" />
     <ClCompile Include="..\source\Resources\ResourceManager.cpp" />
     <ClCompile Include="..\source\Resources\SpriteSheet.cpp" />
@@ -136,6 +137,7 @@
     <ClInclude Include="..\source\Map\Map.hpp" />
     <ClInclude Include="..\source\Map\Tile.hpp" />
     <ClInclude Include="..\source\Misc.h" />
+    <ClInclude Include="..\source\Misc\FPS.hpp" />
     <ClInclude Include="..\source\Misc\Utility.hpp" />
     <ClInclude Include="..\source\Provider\MultiProvider.hpp" />
     <ClInclude Include="..\source\Provider\Provider.hpp" />

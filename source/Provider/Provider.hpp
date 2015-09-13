@@ -9,6 +9,10 @@ public:
     { }
 
     virtual float getValue() = 0;
+
+    virtual std::unique_ptr<Provider> clone() const = 0;
+
+    virtual void update(float elapsedTime) = 0;
 };
 
 #endif

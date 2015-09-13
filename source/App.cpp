@@ -29,8 +29,8 @@ void App::run()
 void App::draw()
 {
     m_window.clear();
-    m_fpsCounter.draw(m_window);
     m_stateManager.draw(m_window);
+    //m_fpsCounter.draw(m_window);
     m_window.display();
 }
 

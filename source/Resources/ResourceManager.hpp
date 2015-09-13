@@ -32,12 +32,15 @@ private:
     std::unordered_map<std::string, std::string> m_fontKeys;
     std::unordered_map<std::string, std::unique_ptr<sf::Font>> m_fonts;
 
+    void parseMapFileName(tinyxml2::XMLDocument& doc);
+    std::unordered_map<std::string, std::string> m_mapFileNames;
 public:
     ResourceManager(const std::string& fileName);
 
-    const sf::Texture* getTexture(const std::string& key);
+    sf::Texture* getTexture(const std::string& key);
     SpriteSheet* getSpriteSheet(const std::string& key);
     sf::Font* getFont(const std::string& key);
+    const std::string& getMapFileName(const std::string& key);
 };
 
 #endif

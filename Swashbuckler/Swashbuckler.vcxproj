@@ -101,7 +101,9 @@
     <ClCompile Include="..\source\Input\Keyboard.cpp" />
     <ClCompile Include="..\source\Input\Mouse.cpp" />
     <ClCompile Include="..\source\main.cpp" />
+    <ClCompile Include="..\source\Map\IsoPositionController.cpp" />
     <ClCompile Include="..\source\Map\Map.cpp" />
+    <ClCompile Include="..\source\Map\Map_LoadingPart.cpp" />
     <ClCompile Include="..\source\Map\Tile.cpp" />
     <ClCompile Include="..\source\Misc.cpp" />
     <ClCompile Include="..\source\Misc\FPS.cpp" />
@@ -134,6 +136,7 @@
     <ClInclude Include="..\source\CWindowHandle.h" />
     <ClInclude Include="..\source\Input\Keyboard.hpp" />
     <ClInclude Include="..\source\Input\Mouse.hpp" />
+    <ClInclude Include="..\source\Map\IsoPositionController.hpp" />
     <ClInclude Include="..\source\Map\Map.hpp" />
     <ClInclude Include="..\source\Map\Tile.hpp" />
     <ClInclude Include="..\source\Misc.h" />

@@ -19,6 +19,14 @@ public:
     {
         return m_value;
     }
+
+    virtual std::unique_ptr<Provider> clone() const override
+    {
+        return std::unique_ptr<StaticProvider>(new StaticProvider(m_value));
+    }
+
+    virtual void update(float elapsedTime) override
+    { }
 };
 
 #endif

@@ -1,7 +1,8 @@
 #ifndef SPRITESHEET_HPP
 #define SPRITESHEET_HPP
 
-#include <unordered_map>
+#include <vector>
+#include <utility>
 #include <string>
 #include <SFML/Graphics/Rect.hpp>
 
@@ -22,7 +23,7 @@ public:
     };
 
 private:
-    std::unordered_map<std::string, SpriteData> m_spriteKeys;
+    std::vector<std::pair<std::string, SpriteData>> m_spriteKeys;
     std::string m_textureName;
     std::string m_fileName;
 
@@ -32,12 +33,15 @@ public:
     SpriteSheet(const std::string& fileName);
     SpriteSheet();
     SpriteData get(const std::string& key) const;
+    SpriteData get(unsigned int index) const;
     std::string getTextureName() const;
     bool loadFromFile(const std::string& fileName);
+    sf::IntRect getTextureRect(unsigned int index) const;
     sf::IntRect getTextureRect(const std::string& key) const;
     sf::IntRect getTextureRect(const std::string& key, unsigned int index) const;
     sf::Vector2f getOrigin(const std::string& key) const;
     sf::Vector2f getOrigin(const std::string& key, unsigned int index) const;
+    sf::Vector2f getOrigin(unsigned int index) const;
 };
 
 #endif

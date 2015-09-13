@@ -1,12 +1,18 @@
 <textures>
 	<texture name="mouse" file="resources/Textures/Mouse Set.png" />
+	<texture name="dummy" file="resources/Textures/Dummy IsoSet.png" />
 </textures>
 
 <spritesheets>
 	<spritesheet name="mouse" file="resources/SpriteSheets/Mouse.sps" />
+	<spritesheet name="dummy" file="resources/SpriteSheets/Dummy.sps" />
 </spritesheets>
 
 <fonts>
 	<font name="gooey" file="resources/Fonts/gooey.ttf" />
 	<font name="modernefraktur" file="resources/Fonts/ModerneFraktur.ttf" />
 </fonts>
+
+<maps>
+	<map name="test" file="resources/Maps/TestDungeon.map" />
+</maps>

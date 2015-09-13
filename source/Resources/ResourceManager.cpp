@@ -11,6 +11,7 @@ ResourceManager::ResourceManager(const std::string& fileName) :
     parseTexture(doc);
     parseSpriteSheet(doc);
     parseFont(doc);
+    parseMapFileName(doc);
 }
 
 sf::Texture* ResourceManager::loadTexture(const std::string& file)
@@ -45,7 +46,7 @@ void ResourceManager::parseTexture(tinyxml2::XMLDocument& doc)
     }
 }
 
-const sf::Texture* ResourceManager::getTexture(const std::string& key)
+sf::Texture* ResourceManager::getTexture(const std::string& key)
 {
     auto existingKey = m_textureKeys.find(key);
     if(existingKey == end(m_textureKeys))
@@ -145,4 +146,32 @@ sf::Font* ResourceManager::getFont(const std::string& key)
         m_fonts[key] = std::unique_ptr<sf::Font>(std::move(loadFont(existingKey->second)));
 
     return m_fonts[key].get();
+}
+
+void ResourceManager::parseMapFileName(tinyxml2::XMLDocument& doc)
+{
+    if(auto group = doc.FirstChildElement("maps"))
+    {
+        for(auto it = group->FirstChildElement("map");
+            it != nullptr; it = it->NextSiblingElement("map"))
+        {
+            std::string name = it->Attribute("name");
+            std::string file = it->Attribute("file");
+
+            auto existingKey = m_mapFileNames.find(name);
+            if(existingKey != end(m_mapFileNames))
+                throw std::runtime_error("Map is allready registered.");
+
+            m_mapFileNames[name] = file;
+        }
+    }
+}
+
+const std::string& ResourceManager::getMapFileName(const std::string& key)
+{
+    auto existingKey = m_mapFileNames.find(key);
+    if(existingKey == end(m_mapFileNames))
+        throw std::runtime_error("MapKey '" + key + "' not found.");
+
+    return existingKey->second;
 }

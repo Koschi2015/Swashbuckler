@@ -57,17 +57,38 @@ bool SpriteSheet::loadFromFile(const std::string& filename)
 
 void SpriteSheet::insert(const std::string& key, const SpriteData& data)
 {
-    if(m_spriteKeys.find(key) == std::end(m_spriteKeys))
+    for(auto it = begin(m_spriteKeys); it != end(m_spriteKeys); ++it)
+    {
+        if(it->first == key)
+            throw std::runtime_error("The key '" + key + "' is allready registered.");
+    }
+    m_spriteKeys.push_back(std::make_pair(key, data));
+    /*if(m_spriteKeys.find(key) == std::end(m_spriteKeys))
         m_spriteKeys[key] = data;
     else
-        throw std::runtime_error("The key'" + key + "' is allready registered.");
+        throw std::runtime_error("The key '" + key + "' is allready registered.");*/
 }
 
 SpriteSheet::SpriteData SpriteSheet::get(const std::string& key) const
 {
-    auto result = m_spriteKeys.find(key);
-    if(result == end(m_spriteKeys))
-        throw std::runtime_error("The key'" + key + "' is not registered.");
+    for(auto it = begin(m_spriteKeys); it != end(m_spriteKeys); ++it)
+    {
+        if(it->first == key)
+            return it->second;
+    }
+
+    throw std::runtime_error("The key '" + key + "' is not registered.");
+}
+
+SpriteSheet::SpriteData SpriteSheet::get(unsigned int index) const
+{
+    if(index >= m_spriteKeys.size())
+        throw std::runtime_error("The index '" + utility::toString(index) + "' is out of range.");
+
+    auto result = begin(m_spriteKeys);
+    for(unsigned int i = 0; i != index; ++i)
+        ++result;
+
     return result->second;
 }
 
@@ -97,4 +118,16 @@ sf::Vector2f SpriteSheet::getOrigin(const std::string& key, unsigned int index) 
 {
     std::string extendedKey = key + ":" + utility::toString(index);
     return getOrigin(extendedKey);
+}
+
+sf::IntRect SpriteSheet::getTextureRect(unsigned int index) const
+{
+    auto data = get(index);
+    return sf::IntRect(data.x, data.y, data.width, data.height);
+}
+
+sf::Vector2f SpriteSheet::getOrigin(unsigned int index) const
+{
+    auto data = get(index);
+    return sf::Vector2f(data.originX, data.originY);
 }

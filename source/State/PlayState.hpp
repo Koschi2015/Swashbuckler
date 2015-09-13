@@ -3,6 +3,7 @@
 
 #include "State.hpp"
 #include <SFML/Graphics/Sprite.hpp>
+#include "../Map/Map.hpp"
 
 class ResourceManager;
 class SpriteSheet;
@@ -15,6 +16,8 @@ private:
 
     sf::Sprite m_mouseIcon;
     SpriteSheet* m_mouseSpriteSheet;
+
+    Map m_map;
 public:
     PlayState(Mouse& mouse,
               Keyboard& keyboard,

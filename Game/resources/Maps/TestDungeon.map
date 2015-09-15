@@ -3,18 +3,20 @@
 		<provider name="walltexture" type="static" value="0" />
 		<provider name="groundtexture" type="static" value="2" />
 		<provider name="ramptexture" type="static" value="3" />
+		<provider name="testanim" type="animation" firstindex="0" lastindex="4" frametime="1" />
 	</providers>
 	<tiles>
 		<tile rep="wa" name="Wall" textureprovider="walltexture" />
 		<tile rep="00" name="Floor" textureprovider="groundtexture" />
 		<tile rep="ra" name="Ramp" textureprovider="ramptexture" />
+		<tile rep="an" name="Anim" textureprovider="testanim" />
 	</tiles>
 	
 	<grid>
 
 wawawawawawawawawawa
 wa000000000000ra00wa
-wa0000000000000000wa
+wa000000an00000000wa
 wa0000000000000000wa
 wa0000000000000000wa
 wa0000000000000000wa

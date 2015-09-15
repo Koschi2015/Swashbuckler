@@ -1,6 +1,7 @@
 #include "Map.hpp"
 #include "../Resources/ResourceManager.hpp"
 #include "../Provider/StaticProvider.hpp"
+#include "../Provider/AnimationProvider.hpp"
 #include <tinyxml2.h>
 
 void Map::load(const std::string& mapKey)
@@ -33,6 +34,14 @@ void Map::parseProvider(tinyxml2::XMLDocument& doc,
                 std::string name = it->Attribute("name");
                 float value = it->FloatAttribute("value");
                 providerPool[name] = std::unique_ptr<Provider>(new StaticProvider(value));
+            }
+            if(type == "animation")
+            {
+                std::string name = it->Attribute("name");
+                unsigned int firstIndex = it->IntAttribute("firstindex");
+                unsigned int lastIndex = it->IntAttribute("lastindex");
+                float frameTime = it->FloatAttribute("frametime");
+                providerPool[name] = std::unique_ptr<Provider>(new AnimationProvider(firstIndex, lastIndex, frameTime));
             }
         }
     }

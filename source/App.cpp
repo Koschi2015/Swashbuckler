@@ -30,7 +30,7 @@ void App::draw()
 {
     m_window.clear();
     m_stateManager.draw(m_window);
-    //m_fpsCounter.draw(m_window);
+    m_fpsCounter.draw(m_window);
     m_window.display();
 }
 

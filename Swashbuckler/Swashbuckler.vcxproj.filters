@@ -260,5 +260,8 @@
     <ClInclude Include="..\source\Map\IsoPositionController.hpp">
       <Filter>Headerdateien\Map</Filter>
     </ClInclude>
+    <ClInclude Include="..\source\Provider\AnimationProvider.hpp">
+      <Filter>Headerdateien\Provider</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -63,10 +63,6 @@ void SpriteSheet::insert(const std::string& key, const SpriteData& data)
             throw std::runtime_error("The key '" + key + "' is allready registered.");
     }
     m_spriteKeys.push_back(std::make_pair(key, data));
-    /*if(m_spriteKeys.find(key) == std::end(m_spriteKeys))
-        m_spriteKeys[key] = data;
-    else
-        throw std::runtime_error("The key '" + key + "' is allready registered.");*/
 }
 
 SpriteSheet::SpriteData SpriteSheet::get(const std::string& key) const
@@ -130,4 +126,9 @@ sf::Vector2f SpriteSheet::getOrigin(unsigned int index) const
 {
     auto data = get(index);
     return sf::Vector2f(data.originX, data.originY);
+}
+
+int SpriteSheet::getSpriteCount() const
+{
+    return m_spriteKeys.size();
 }

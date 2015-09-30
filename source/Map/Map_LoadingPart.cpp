@@ -28,20 +28,21 @@ void Map::parseProvider(tinyxml2::XMLDocument& doc,
         for(auto it = group->FirstChildElement("provider");
             it != nullptr; it = it->NextSiblingElement("provider"))
         {
-            std::string type = it->Attribute("type");
-            if(type == "static")
+            std::string name = it->Attribute("name");
+            for(auto child = it->FirstChildElement(); child != nullptr; child = child->NextSiblingElement())
             {
-                std::string name = it->Attribute("name");
-                float value = it->FloatAttribute("value");
-                providerPool[name] = std::unique_ptr<Provider>(new StaticProvider(value));
-            }
-            if(type == "animation")
-            {
-                std::string name = it->Attribute("name");
-                unsigned int firstIndex = it->IntAttribute("firstindex");
-                unsigned int lastIndex = it->IntAttribute("lastindex");
-                float frameTime = it->FloatAttribute("frametime");
-                providerPool[name] = std::unique_ptr<Provider>(new AnimationProvider(firstIndex, lastIndex, frameTime));
+                if(std::string(child->Name())== "static")
+                {
+                    float value = child->FloatAttribute("value");
+                    providerPool[name] = std::unique_ptr<Provider>(new StaticProvider(value));
+                }
+                else if(std::string(child->Name()) == "animation")
+                {
+                    unsigned int firstIndex = child->IntAttribute("firstindex");
+                    unsigned int lastIndex = child->IntAttribute("lastindex");
+                    float frameTime = child->FloatAttribute("frametime");
+                    providerPool[name] = std::unique_ptr<Provider>(new AnimationProvider(firstIndex, lastIndex, frameTime));
+                }
             }
         }
     }

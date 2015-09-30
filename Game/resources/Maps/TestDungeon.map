@@ -1,29 +1,78 @@
-<map texturekey="dummy" spritesheetkey="dummy">
+<map texturekey="dungeon" spritesheetkey="dungeon">
 	<providers>
-		<provider name="walltexture" type="static" value="0" />
-		<provider name="groundtexture" type="static" value="2" />
-		<provider name="ramptexture" type="static" value="3" />
-		<provider name="testanim" type="animation" firstindex="0" lastindex="4" frametime="1" />
+		<provider name="walltexture">
+			<static value="6" />
+		</provider>
+		<provider name="groundblue">
+			<static value="0" />
+		</provider>
+		<provider name="groundbluedest">
+			<static value="1" />
+		</provider>
+		<provider name="groundwhite">
+			<static value="2" />
+		</provider>
+		<provider name="groundwhitedest">
+			<static value="3" />
+		</provider>
+		<provider name="groundgreen">
+			<static value="4" />
+		</provider>
+		<provider name="groundgreendest">
+			<static value="5" />
+		</provider>
+		<provider name="doortexture">
+			<static value="8" />
+		</provider>
 	</providers>
 	<tiles>
 		<tile rep="wa" name="Wall" textureprovider="walltexture" />
-		<tile rep="00" name="Floor" textureprovider="groundtexture" />
-		<tile rep="ra" name="Ramp" textureprovider="ramptexture" />
-		<tile rep="an" name="Anim" textureprovider="testanim" />
+		<tile rep="gb" name="Floorblue" textureprovider="groundblue" />
+		<tile rep="gw" name="Floorwhite" textureprovider="groundwhite" />
+		<tile rep="gg" name="Floorgreen" textureprovider="groundgreen" />
+		<tile rep="do" name="door" textureprovider="doortexture" />
 	</tiles>
 	
 	<grid>
 
-wawawawawawawawawawa
-wa000000000000ra00wa
-wa000000an00000000wa
-wa0000000000000000wa
-wa0000000000000000wa
-wa0000000000000000wa
-wa0000000000000000wa
-wa0000000000000000wa
-wa0000000000000000wa
-wawawawawawawawawawa
+wawawawawawawawawawawawawawawawawawawawawawawawawawawawawawawa
+wagbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbwagbgbgbgbgbgbgbgbgbgbgbgbwa
+wagwgbgbgbgbgbgbgwgwgbgbgbgbgbgbgwwagbgbgbgbgbgbgbgbgbgbgbgbwa
+wagwgwgbgbgbgbgwgwgwgwgbgbgbgbgwgwwagbgbgbgbgbgbgbgbgbgbgbgbwa
+wagwgwgwgbgbgwgwgwgwgwgwgbgbgwgwgwdogbgbgbgbgbgbgbgbgbgbgbgbwa
+wagwgwgwgwgwgwgwgwgwgwgwgwgwgwgwgwwagbgbgbgbgbgbgbgbgbgbgbgbwa
+wagwgwgwgggggwgwgwgwgwgwgggggwgwgwwagbgbgbgbgbgbgbgbgbgbgbgbwa
+wagwgwgggggggggwgwgwgwgggggggggwgwwagbgbgbgbgbgbgbgbgbgbgbgbwa
+wagwgggggggggggggwgwgggggggggggggwwagbgbgbgbgbgbgbgbgbgbgbgbwa
+waggggggggggggggggggggggggggggggggwagbgbgbgbgbgbgbgbgbgbgbgbwa
+wagbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbwawawawawawawawawawawawawawa
+wagwgbgbgbgbgbgbgwgwgbgbgbgbgbgbgwwa
+wagwgwgbgbgbgbgwgwgwgwgbgbgbgbgwgwwa
+wagwgwgwgbgbgwgwgwgwgwgwgbgbgwgwgwwa
+wagwgwgwgwgwgwgwgwgwgwgwgwgwgwgwgwwa
+wagwgwgwgggggwgwgwgwgwgwgggggwgwgwwa
+wagwgwgggggggggwgwgwgwgggggggggwgwwa
+wagwgggggggggggggwgwgggggggggggggwwa
+waggggggggggggggggggggggggggggggggwa
+wagbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbwa
+wagwgbgbgbgbgbgbgwgwgbgbgbgbgbgbgwwa
+wagwgwgbgbgbgbgwgwgwgwgbgbgbgbgwgwwa
+wagwgwgwgbgbgwgwgwgwgwgwgbgbgwgwgwwa
+wagwgwgwgwgwgwgwgwgwgwgwgwgwgwgwgwwa
+wagwgwgwgggggwgwgwgwgwgwgggggwgwgwwa
+wagwgwgggggggggwgwgwgwgggggggggwgwwa
+wagwgggggggggggggwgwgggggggggggggwwa
+waggggggggggggggggggggggggggggggggwa
+wagbgbgbgbgbgbgbgbgbgbgbgbgbgbgbgbwa
+wagwgbgbgbgbgbgbgwgwgbgbgbgbgbgbgwwa
+wagwgwgbgbgbgbgwgwgwgwgbgbgbgbgwgwwa
+wagwgwgwgbgbgwgwgwgwgwgwgbgbgwgwgwwa
+wagwgwgwgwgwgwgwgwgwgwgwgwgwgwgwgwwa
+wagwgwgwgggggwgwgwgwgwgwgggggwgwgwwa
+wagwgwgggggggggwgwgwgwgggggggggwgwwa
+wagwgggggggggggggwgwgggggggggggggwwa
+waggggggggggggggggggggggggggggggggwa
+wawawawawawawawawawawawawawawawawawa
 
 	</grid>
 </map>

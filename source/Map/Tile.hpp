@@ -20,11 +20,13 @@ private:
     std::string m_rep;
     std::string m_name;
     std::unique_ptr<Provider> m_textureIndex;
+    int m_lastTextureIndex;
     IsoPositionController m_gridPosition;
     sf::Vector2f m_position;
     sf::Sprite m_sprite;
     SpriteSheet* m_spriteSheet;
     sf::Texture* m_texture;
+
 public:
     Tile();
     Tile(const std::string& rep,

@@ -42,6 +42,7 @@ public:
     sf::Vector2f getOrigin(const std::string& key) const;
     sf::Vector2f getOrigin(const std::string& key, unsigned int index) const;
     sf::Vector2f getOrigin(unsigned int index) const;
+    int getSpriteCount() const;
 };
 
 #endif

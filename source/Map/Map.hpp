@@ -39,6 +39,7 @@ private:
     void parseTextureData(tinyxml2::XMLDocument& doc);
 private:
     std::vector<Tile> m_tiles;
+    std::vector<std::pair<int, sf::Sprite>> m_textureAtlas;
     sf::Vector2u m_tileSize;
     ResourceManager& m_resourceManager;
     SpriteSheet* m_currentMapSheet;

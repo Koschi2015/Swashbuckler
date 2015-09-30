@@ -1,11 +1,13 @@
 <textures>
 	<texture name="mouse" file="resources/Textures/Mouse Set.png" />
 	<texture name="dummy" file="resources/Textures/Dummy IsoSet.png" />
+	<texture name="dungeon" file="resources/Textures/Dungeon Set.png" />
 </textures>
 
 <spritesheets>
 	<spritesheet name="mouse" file="resources/SpriteSheets/Mouse.sps" />
 	<spritesheet name="dummy" file="resources/SpriteSheets/Dummy.sps" />
+	<spritesheet name="dungeon" file="resources/SpriteSheets/Dungeon.sps" />
 </spritesheets>
 
 <fonts>

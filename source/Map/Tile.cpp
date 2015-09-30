@@ -7,7 +7,8 @@ Tile::Tile() :
     m_name(""),
     m_textureIndex(nullptr),
     m_spriteSheet(nullptr),
-    m_texture(nullptr)
+    m_texture(nullptr),
+    m_lastTextureIndex(-1)
 { }
 
 Tile::Tile(const std::string& rep,
@@ -19,7 +20,8 @@ Tile::Tile(const std::string& rep,
     m_textureIndex(std::move(textureIndex)),
     m_position(position),
     m_spriteSheet(nullptr),
-    m_texture(nullptr)
+    m_texture(nullptr),
+    m_lastTextureIndex(-1)
 { }
 
 Tile::Tile(const Tile& tile)
@@ -34,6 +36,7 @@ Tile::Tile(const Tile& tile)
 
     m_spriteSheet = tile.m_spriteSheet;
     m_texture = tile.m_texture;
+    m_lastTextureIndex = tile.m_lastTextureIndex;
 }
 
 Tile& Tile::operator= (const Tile& tile)
@@ -48,6 +51,7 @@ Tile& Tile::operator= (const Tile& tile)
 
     m_spriteSheet = tile.m_spriteSheet;
     m_texture = tile.m_texture;
+    m_lastTextureIndex = tile.m_lastTextureIndex;
 
     return *this;
 }
@@ -60,7 +64,7 @@ const sf::Vector2i& Tile::getGridPosition() const
 void Tile::setGridPosition(const sf::Vector2i& position)
 {
     m_gridPosition = IsoPositionController(position.x, position.y);
-    m_position.x = position.x * 16.f- position.y * 16.f;
+    m_position.x = position.x * 16.f - position.y * 16.f;
     m_position.y = position.y * 8.f + position.x * 8.f;
     m_sprite.setPosition(m_position);
 }
@@ -68,15 +72,22 @@ void Tile::setGridPosition(const sf::Vector2i& position)
 void Tile::update(float elapsedTime)
 {
     m_textureIndex->update(elapsedTime);
-    
-    m_sprite.setTexture(*m_texture);
-    m_sprite.setTextureRect(m_spriteSheet->getTextureRect(static_cast<int>(m_textureIndex->getValue())));
-    m_sprite.setPosition(m_position);
+    int textureIndex = static_cast<int>(m_textureIndex->getValue());
+    if(m_lastTextureIndex != textureIndex)
+    {
+        m_sprite.setTexture(*m_texture);
+        m_sprite.setTextureRect(m_spriteSheet->getTextureRect(static_cast<int>(m_textureIndex->getValue())));
+        m_sprite.setOrigin(m_spriteSheet->getOrigin(static_cast<int>(m_textureIndex->getValue())));
+        m_sprite.setPosition(m_position + sf::Vector2f(400,100));
+        m_lastTextureIndex = textureIndex;
+    }
 }
 
 void Tile::draw(sf::RenderWindow& window)
 {
-    window.draw(m_sprite);
+    auto renderRect = window.getViewport(window.getView());
+    if(renderRect.contains(static_cast<sf::Vector2i>(m_sprite.getPosition())))
+        window.draw(m_sprite);
 }
 
 void Tile::bindSpriteSheet(SpriteSheet& spriteSheet)

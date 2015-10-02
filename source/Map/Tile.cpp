@@ -86,7 +86,10 @@ void Tile::update(float elapsedTime)
 void Tile::draw(sf::RenderWindow& window)
 {
     auto renderRect = window.getViewport(window.getView());
-    if(renderRect.contains(static_cast<sf::Vector2i>(m_sprite.getPosition())))
+    if(renderRect.intersects(sf::Rect<int>(static_cast<int>(m_sprite.getPosition().x),
+                                           static_cast<int>(m_sprite.getPosition().y),
+                                           m_sprite.getTextureRect().width,
+                                           m_sprite.getTextureRect().height)))
         window.draw(m_sprite);
 }
 

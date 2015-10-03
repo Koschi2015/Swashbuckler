@@ -21,8 +21,7 @@ private:
     std::string m_name;
     std::unique_ptr<Provider> m_textureIndex;
     int m_lastTextureIndex;
-    IsoPositionController m_gridPosition;
-    sf::Vector2f m_position;
+    IsoPositionController2f m_position;
     sf::Sprite m_sprite;
     SpriteSheet* m_spriteSheet;
     sf::Texture* m_texture;
@@ -32,7 +31,8 @@ public:
     Tile(const std::string& rep,
          const std::string& name,
          std::unique_ptr<Provider> textureIndex,
-         const IsoPositionController& position = IsoPositionController(0, 0));
+         const sf::Vector2f& gridSize = sf::Vector2f(32.f, 16.f),
+         const sf::Vector2i& gridPosition = sf::Vector2i(0, 0));
     Tile(const Tile& tile);
     
     Tile& operator= (const Tile& tile);
@@ -40,11 +40,11 @@ public:
     void update(float elapsedTime);
     void draw(sf::RenderWindow& window);
 
-    const sf::Vector2i& getGridPosition() const;
+    const sf::Vector2i getGridPosition() const;
 
     void setGridPosition(const sf::Vector2i& position);
 
-    void bindSpriteSheet(SpriteSheet& spriteSheet);
+    void bindSpriteSheet(SpriteSheet* spriteSheet);
     void bindTexture(sf::Texture* texture);
 };
 

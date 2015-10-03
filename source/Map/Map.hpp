@@ -24,7 +24,7 @@ typedef std::unordered_map<std::string, std::unique_ptr<Provider>> ProviderPool;
 
 class Map
 {
-    // Map_LoadingPart - Function
+    // Map_LoadingPart - Functions
 private:
     void parseTile(tinyxml2::XMLDocument& doc,
                    TilePool& tilePool,
@@ -40,7 +40,6 @@ private:
 private:
     std::vector<Tile> m_tiles;
     std::vector<std::pair<int, sf::Sprite>> m_textureAtlas;
-    sf::Vector2u m_tileSize;
     ResourceManager& m_resourceManager;
     SpriteSheet* m_currentMapSheet;
     sf::Texture* m_currentTexture;

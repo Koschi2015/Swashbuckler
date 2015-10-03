@@ -95,7 +95,7 @@ void Map::parseGrid(tinyxml2::XMLDocument& doc,
                 auto pos = sf::Vector2i(static_cast<unsigned int>(column / 2), static_cast<unsigned int>(row));
                 Tile tile = tilePool[rep];
                 tile.setGridPosition(pos);
-                tile.bindSpriteSheet(*m_currentMapSheet);
+                tile.bindSpriteSheet(m_currentMapSheet);
                 tile.bindTexture(m_currentTexture);
                 m_tiles.push_back(tile);
             }

@@ -144,9 +144,6 @@
     <ClCompile Include="..\source\Misc\FPS.cpp">
       <Filter>Quelldateien\Misc</Filter>
     </ClCompile>
-    <ClCompile Include="..\source\Map\IsoPositionController.cpp">
-      <Filter>Quelldateien\Map</Filter>
-    </ClCompile>
     <ClCompile Include="..\source\Map\Map_LoadingPart.cpp">
       <Filter>Quelldateien\Map</Filter>
     </ClCompile>
@@ -262,6 +259,9 @@
     </ClInclude>
     <ClInclude Include="..\source\Provider\AnimationProvider.hpp">
       <Filter>Headerdateien\Provider</Filter>
+    </ClInclude>
+    <ClInclude Include="..\source\Map\World.hpp">
+      <Filter>Headerdateien\Map</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

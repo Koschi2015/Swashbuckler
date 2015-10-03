@@ -8,35 +8,36 @@ Tile::Tile() :
     m_textureIndex(nullptr),
     m_spriteSheet(nullptr),
     m_texture(nullptr),
-    m_lastTextureIndex(-1)
+    m_lastTextureIndex(-1),
+    m_position(IsoPositionController2f(sf::Vector2i(0, 0), sf::Vector2f(0, 0)))
 { }
 
 Tile::Tile(const std::string& rep,
            const std::string& name,
            std::unique_ptr<Provider> textureIndex,
-           const IsoPositionController& position) :
+           const sf::Vector2f& gridSize,
+           const sf::Vector2i& gridPosition) :
     m_rep(rep),
     m_name(name),
     m_textureIndex(std::move(textureIndex)),
-    m_position(position),
+    m_position(gridPosition, gridSize),
     m_spriteSheet(nullptr),
     m_texture(nullptr),
     m_lastTextureIndex(-1)
 { }
 
-Tile::Tile(const Tile& tile)
+Tile::Tile(const Tile& tile) :
+    m_rep(tile.m_rep),
+    m_name(tile.m_name),
+    m_position(tile.m_position),
+    m_spriteSheet(tile.m_spriteSheet),
+    m_texture(tile.m_texture),
+    m_lastTextureIndex(tile.m_lastTextureIndex)
 {
-    m_rep = tile.m_rep;
-    m_name = tile.m_name;
     if(tile.m_textureIndex == nullptr)
         m_textureIndex = nullptr;
     else
         m_textureIndex = std::move(tile.m_textureIndex->clone());
-    m_position = tile.m_position;
-
-    m_spriteSheet = tile.m_spriteSheet;
-    m_texture = tile.m_texture;
-    m_lastTextureIndex = tile.m_lastTextureIndex;
 }
 
 Tile& Tile::operator= (const Tile& tile)
@@ -56,17 +57,17 @@ Tile& Tile::operator= (const Tile& tile)
     return *this;
 }
 
-const sf::Vector2i& Tile::getGridPosition() const
+const sf::Vector2i Tile::getGridPosition() const
 {
-    return m_gridPosition;
+    return m_position.getGridPosition();
 }
 
 void Tile::setGridPosition(const sf::Vector2i& position)
 {
-    m_gridPosition = IsoPositionController(position.x, position.y);
-    m_position.x = position.x * 16.f - position.y * 16.f;
-    m_position.y = position.y * 8.f + position.x * 8.f;
-    m_sprite.setPosition(m_position);
+    m_position.setGridPosition(position);
+    //m_position.x = position.x * 16.f - position.y * 16.f;
+    //m_position.y = position.y * 8.f + position.x * 8.f;
+    m_sprite.setPosition(m_position.getScreenPosition());
 }
 
 void Tile::update(float elapsedTime)
@@ -78,7 +79,7 @@ void Tile::update(float elapsedTime)
         m_sprite.setTexture(*m_texture);
         m_sprite.setTextureRect(m_spriteSheet->getTextureRect(static_cast<int>(m_textureIndex->getValue())));
         m_sprite.setOrigin(m_spriteSheet->getOrigin(static_cast<int>(m_textureIndex->getValue())));
-        m_sprite.setPosition(m_position + sf::Vector2f(400,100));
+        m_sprite.setPosition(m_position.getScreenPosition());
         m_lastTextureIndex = textureIndex;
     }
 }
@@ -93,9 +94,9 @@ void Tile::draw(sf::RenderWindow& window)
         window.draw(m_sprite);
 }
 
-void Tile::bindSpriteSheet(SpriteSheet& spriteSheet)
+void Tile::bindSpriteSheet(SpriteSheet* spriteSheet)
 {
-    m_spriteSheet = &spriteSheet;
+    m_spriteSheet = spriteSheet;
 }
 
 void Tile::bindTexture(sf::Texture* texture)

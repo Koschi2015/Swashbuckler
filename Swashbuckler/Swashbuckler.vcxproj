@@ -101,7 +101,6 @@
     <ClCompile Include="..\source\Input\Keyboard.cpp" />
     <ClCompile Include="..\source\Input\Mouse.cpp" />
     <ClCompile Include="..\source\main.cpp" />
-    <ClCompile Include="..\source\Map\IsoPositionController.cpp" />
     <ClCompile Include="..\source\Map\Map.cpp" />
     <ClCompile Include="..\source\Map\Map_LoadingPart.cpp" />
     <ClCompile Include="..\source\Map\Tile.cpp" />
@@ -139,6 +138,7 @@
     <ClInclude Include="..\source\Map\IsoPositionController.hpp" />
     <ClInclude Include="..\source\Map\Map.hpp" />
     <ClInclude Include="..\source\Map\Tile.hpp" />
+    <ClInclude Include="..\source\Map\World.hpp" />
     <ClInclude Include="..\source\Misc.h" />
     <ClInclude Include="..\source\Misc\FPS.hpp" />
     <ClInclude Include="..\source\Misc\Utility.hpp" />

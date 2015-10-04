@@ -4,11 +4,6 @@
 class Mouse;
 class Keyboard;
 
-namespace sf
-{
-    class RenderWindow;
-}
-
 enum StateId {None,
               PlayStateId};
 
@@ -30,7 +25,7 @@ public:
 
     virtual void update(float frameTime) = 0;
 
-    virtual void draw(sf::RenderWindow& window) = 0;
+    virtual void draw() = 0;
 
     virtual void onEnter() = 0;
 

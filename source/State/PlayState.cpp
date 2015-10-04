@@ -12,26 +12,24 @@ PlayState::PlayState(Mouse& mouse,
     m_resourceManager(resourceManager),
     m_window(window),
     m_mouseSpriteSheet(nullptr),
-    m_map(resourceManager)
+    m_world(resourceManager, mouse, keyboard, window)
 {
     m_mouseIcon.setTexture(*m_resourceManager.getTexture("mouse"));
     m_mouseSpriteSheet = m_resourceManager.getSpriteSheet("mouse");
     m_mouseIcon.setTextureRect(m_mouseSpriteSheet->getTextureRect("arrow"));
     m_mouseIcon.setPosition(State::getMouse().getLocalPosition(m_window));
-
-    m_map.load("test");
 }
 
 void PlayState::update(float frameTime)
 {
     m_mouseIcon.setPosition(State::getMouse().getLocalPosition(m_window));
-    m_map.update(frameTime);
+    m_world.update(frameTime);
 }
 
-void PlayState::draw(sf::RenderWindow& window)
+void PlayState::draw()
 {
-    m_map.draw(window);
-    window.draw(m_mouseIcon);
+    m_world.draw();
+    m_window.draw(m_mouseIcon);
 }
 
 void PlayState::onEnter()

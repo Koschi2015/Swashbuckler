@@ -147,6 +147,9 @@
     <ClCompile Include="..\source\Map\Map_LoadingPart.cpp">
       <Filter>Quelldateien\Map</Filter>
     </ClCompile>
+    <ClCompile Include="..\source\Map\World.cpp">
+      <Filter>Quelldateien\Map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\source\CGameEngine.h">

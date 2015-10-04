@@ -11,11 +11,20 @@ Map::Map(ResourceManager& resourceManager) :
 void Map::update(float elapsedTime)
 {
     for(auto it = begin(m_tiles); it != end(m_tiles); ++it)
-        it->update(elapsedTime);
+    {
+        for(auto jt = begin(*it); jt != end(*it); ++jt)
+            jt->update(elapsedTime);
+    }
+        
 }
 
 void Map::draw(sf::RenderWindow& window)
 {
     for(auto it = begin(m_tiles); it != end(m_tiles); ++it)
-        it->draw(window);
+    {
+        for(auto jt = begin(*it); jt != end(*it); ++jt)
+        {
+            jt->draw(window);
+        }
+    }
 }

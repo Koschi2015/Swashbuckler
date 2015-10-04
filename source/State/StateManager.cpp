@@ -21,10 +21,10 @@ void StateManager::update(float frameTime)
     m_lastFrameTime = frameTime;
 }
 
-void StateManager::draw(sf::RenderWindow& window)
+void StateManager::draw()
 {
     if(m_currentState && !m_paused)
-        m_currentState->draw(window);
+        m_currentState->draw();
 }
 
 void StateManager::registerState(StateId id, std::unique_ptr<State> state)

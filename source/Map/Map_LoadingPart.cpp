@@ -61,7 +61,17 @@ void Map::parseTile(tinyxml2::XMLDocument& doc,
             std::string name = it->Attribute("name");
             std::string textureprovider = it->Attribute("textureprovider");
 
-            tilePool[rep] = Tile(rep, name, providerPool[textureprovider]->clone());
+            TileData tileData;
+
+            if(auto data = it->FirstChildElement())
+            {
+                if(data->Name() == "data")
+                    tileData.cover = data->Attribute("cover") == "true";
+            }
+            else
+                tileData.cover = false;
+
+            tilePool[rep] = Tile(rep, name, providerPool[textureprovider]->clone(), tileData);
         }
     }
 }
@@ -84,6 +94,7 @@ void Map::parseGrid(tinyxml2::XMLDocument& doc,
 
         for(size_t row = 0; row < lines.size(); ++row)
         {
+            std::vector<Tile> tiles;
             for(std::size_t column = 0; column < lines[row].length(); column += 2)
             {
                 std::string rep = lines[row].substr(column, 2);
@@ -97,8 +108,9 @@ void Map::parseGrid(tinyxml2::XMLDocument& doc,
                 tile.setGridPosition(pos);
                 tile.bindSpriteSheet(m_currentMapSheet);
                 tile.bindTexture(m_currentTexture);
-                m_tiles.push_back(tile);
+                tiles.push_back(tile);
             }
+            m_tiles.push_back(tiles);
         }
     }
     else

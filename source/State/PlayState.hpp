@@ -3,7 +3,7 @@
 
 #include "State.hpp"
 #include <SFML/Graphics/Sprite.hpp>
-#include "../Map/Map.hpp"
+#include "../Map/World.hpp"
 
 class ResourceManager;
 class SpriteSheet;
@@ -17,7 +17,7 @@ private:
     sf::Sprite m_mouseIcon;
     SpriteSheet* m_mouseSpriteSheet;
 
-    Map m_map;
+    World m_world;
 public:
     PlayState(Mouse& mouse,
               Keyboard& keyboard,
@@ -26,7 +26,7 @@ public:
 
     void update(float frameTime);
 
-    void draw(sf::RenderWindow& window);
+    void draw();
 
     void onEnter();
 

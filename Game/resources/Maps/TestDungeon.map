@@ -26,7 +26,9 @@
 		</provider>
 	</providers>
 	<tiles>
-		<tile rep="wa" name="Wall" textureprovider="walltexture" />
+		<tile rep="wa" name="Wall" textureprovider="walltexture" >
+			<data cover="true" />
+		</tile>
 		<tile rep="gb" name="Floorblue" textureprovider="groundblue" />
 		<tile rep="gw" name="Floorwhite" textureprovider="groundwhite" />
 		<tile rep="gg" name="Floorgreen" textureprovider="groundgreen" />

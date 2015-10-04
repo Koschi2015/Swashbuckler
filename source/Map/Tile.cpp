@@ -15,11 +15,13 @@ Tile::Tile() :
 Tile::Tile(const std::string& rep,
            const std::string& name,
            std::unique_ptr<Provider> textureIndex,
+           const TileData& tileData,
            const sf::Vector2f& gridSize,
            const sf::Vector2i& gridPosition) :
     m_rep(rep),
     m_name(name),
     m_textureIndex(std::move(textureIndex)),
+    m_tileData(tileData),
     m_position(gridPosition, gridSize),
     m_spriteSheet(nullptr),
     m_texture(nullptr),
@@ -104,4 +106,9 @@ void Tile::bindTexture(sf::Texture* texture)
     m_texture = texture;
     m_sprite.setTexture(*m_texture);
     m_sprite.setTextureRect(m_spriteSheet->getTextureRect(static_cast<int>(m_textureIndex->getValue())));
+}
+
+bool Tile::isCovering() const
+{
+    return m_tileData.cover;
 }

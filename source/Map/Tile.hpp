@@ -14,23 +14,33 @@ namespace sf
     class Texture;
 }
 
+struct TileData
+{
+    bool cover;
+};
+
 class Tile
 {
 private:
     std::string m_rep;
     std::string m_name;
+
     std::unique_ptr<Provider> m_textureIndex;
-    int m_lastTextureIndex;
     IsoPositionController2f m_position;
+
+    int m_lastTextureIndex;
+
     sf::Sprite m_sprite;
     SpriteSheet* m_spriteSheet;
     sf::Texture* m_texture;
 
+    TileData m_tileData;
 public:
     Tile();
     Tile(const std::string& rep,
          const std::string& name,
          std::unique_ptr<Provider> textureIndex,
+         const TileData& tileData,
          const sf::Vector2f& gridSize = sf::Vector2f(32.f, 16.f),
          const sf::Vector2i& gridPosition = sf::Vector2i(0, 0));
     Tile(const Tile& tile);
@@ -46,6 +56,8 @@ public:
 
     void bindSpriteSheet(SpriteSheet* spriteSheet);
     void bindTexture(sf::Texture* texture);
+
+    bool isCovering() const;
 };
 
 #endif

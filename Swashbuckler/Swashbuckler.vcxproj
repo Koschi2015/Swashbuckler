@@ -104,6 +104,7 @@
     <ClCompile Include="..\source\Map\Map.cpp" />
     <ClCompile Include="..\source\Map\Map_LoadingPart.cpp" />
     <ClCompile Include="..\source\Map\Tile.cpp" />
+    <ClCompile Include="..\source\Map\World.cpp" />
     <ClCompile Include="..\source\Misc.cpp" />
     <ClCompile Include="..\source\Misc\FPS.cpp" />
     <ClCompile Include="..\source\Misc\Utility.cpp" />

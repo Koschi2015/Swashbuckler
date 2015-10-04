@@ -20,7 +20,7 @@ public:
     StateManager();
 
     void update(float frameTime);
-    void draw(sf::RenderWindow& window);
+    void draw();
 
     void registerState(StateId id, std::unique_ptr<State> state);
 
